@@ -1,8 +1,47 @@
 ---
-
+import Navbar from './Navbar.astro';
+import '../styles/global.css'
 ---
 
-<div class="text-center">	
- <h1>Welcome to Astro</h1>
+<div class="text-center  text-gray-900">	
+<Navbar />
 </div>
+
+
+<main>
+  <!-- Sección inicio / hero -->
+  <section id="inicio" class="hero">
+    <!-- ...existing hero content... -->
+   
+  </section>
+
+  <!-- Sección Álbumes -->
+  <section id="albums" class="albums-section">
+    <h2>Álbumes</h2>
+    <!-- contenido de álbumes -->
+
+  </section>
+
+  <!-- Sección Fans -->
+  <section id="fans" class="fans-section">
+    <h2>Fans</h2>
+    <!-- contenido de fans -->
+  </section>
+
+  <!-- Sección FAQ -->
+  <section id="faq" class="faq-section">
+    <h2>FAQ</h2>
+    <!-- preguntas frecuentes -->
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contacto</h2>
+    <!-- formulario de contacto -->
+  </section>
+
+  <section id="footer" class="footer-section">  
+    <h2>Footer</h2>
+    <!-- contenido de footer -->
+  </section>
+</main>
 

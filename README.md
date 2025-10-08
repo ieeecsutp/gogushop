@@ -1,46 +1,70 @@
-# Astro Starter Kit: Basics
+# Gogushop Music — Landing page
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Landing page sencilla hecha con Astro que muestra productos coreanos, en particular discos (álbumes) de grupos musicales K‑Pop. Toda la página es una single-page con navegación interna (smooth scroll) hacia secciones: Inicio, Álbumes, Fans, FAQ, Contacto y Footer.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Estructura principal
 
-## 🚀 Project Structure
+- public/ — recursos públicos (favicon, imágenes).
+- src/
+  - components/ — Navbar.astro, Welcome.astro, otros componentes.
+  - layouts/ — Layout.astro (inserta Navbar globalmente).
+  - pages/ — index.astro (contenido de la landing).
+  - styles/ — global.css (estilos globales y directivas Tailwind cuando se use).
+- package.json, tsconfig.json, astro.config.mjs
 
-Inside of your Astro project, you'll see the following folders and files:
+## Requisitos
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- Node.js (v16+ recomendada)
+- pnpm (recomendado) — también funciona con npm/yarn si adapta los comandos.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Instalación (Windows / PowerShell)
 
-## 🧞 Commands
+1. Abrir terminal en la carpeta del proyecto:
+   cd "d:\Voluntariado C-Proyectos\Proyect_Web\app_gogushop"
+2. Instalar dependencias:
+   pnpm install
 
-All commands are run from the root of the project, from a terminal:
+## Ejecutar en desarrollo
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+pnpm run dev
 
-## 👀 Want to learn more?
+- Abre http://localhost:4321
+- Los enlaces del Navbar apuntan a secciones con ids: `#inicio`, `#albums`, `#fans`, `#faq`, `#contact`, `#footer`. Al hacer clic se realiza smooth scroll dentro de la misma página.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Build / Previsualización
+
+- Construir producción:
+  pnpm run build
+- Previsualizar build:
+  pnpm run preview
+
+## Tailwind (opcional)
+
+Si quieres usar Tailwind:
+
+1. Instalar:
+   pnpm install -D tailwindcss postcss autoprefixer
+2. Crear/configurar:
+   npx tailwindcss init -p
+3. Asegúrate de que `tailwind.config.(cjs|js)` incluya:
+   ./src/\*_/_.{astro,html,js,ts,jsx,tsx}
+4. Añadir al inicio de `src/styles/global.css`:
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+5. Reinicia el servidor dev.
+
+## Notas rápidas para desarrollo
+
+- La navegación interna está implementada en `src/components/Navbar.astro` — cierra el menú móvil al navegar y hace scroll suave cuando la sección existe.
+- Si mueves contenido de Welcome.astro a index.astro, asegúrate de no renderizar Navbar dos veces (uno en Layout y otro en Welcome).
+- Para activar la clase `.active` según la sección visible puedo añadir un IntersectionObserver — dime si lo quieres.
+
+## Contribuir / Ajustes
+
+- Añade álbumes en la sección `#albums` en `src/pages/index.astro` o en `src/components`.
+- Para integrar carrito/estado, dime cómo prefieres manejar estado (localStorage, store, backend) y lo integro en la badge del navbar.
+
+---
+
+Proyecto creado con Astro. Si quieres, aplico la configuración Tailwind y añado un ejemplo de hero con clases Tailwind.
