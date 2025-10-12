@@ -1,0 +1,138 @@
+---
+interface Props {
+  image?: string;
+  title?: string;
+  description?: string;
+  gradient?: string;
+  variant?: "default" | "compact" | "testimonial";
+  sizeClass?: string;
+
+  // Props para modo testimonial
+  name?: string;
+  age?: number;
+  city?: string;
+  album?: string;
+  testimonial?: string;
+  transformation?: string;
+  months?: string;
+  verified?: boolean;
+  stars?: number;
+}
+
+const {
+  image,
+  title,
+  description,
+  gradient = "bg-gradient-to-tr from-[#b57cff] to-[#6ec6db]",
+  variant = "default",
+  sizeClass = "py-7 px-6 text-base",
+  name,
+  age,
+  city,
+  album,
+  testimonial,
+  transformation,
+  months,
+  verified = true,
+  stars = 5,
+} = Astro.props as Props;
+---
+
+<div
+  class={`bg-white border border-violet-100 rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ${sizeClass}`}
+>
+  {variant === "compact" ? (
+    <!-- 💜 Modo compacto -->
+    <div>
+      <h3
+        class="text-3xl font-extrabold bg-gradient-to-r from-[#b57cff] to-[#17aed4] bg-clip-text text-transparent mb-2"
+      >
+        {title}
+      </h3>
+      <p class="text-gray-600 font-medium">{description}</p>
+    </div>
+  ) : variant === "testimonial" ? (
+
+   <!-- Modo testimonial -->
+    <div class="text-left relative p-4">
+    <span
+        class="absolute top-2 right-3 text-[#d7caff] text-3xl font-bold select-none"
+        >”</span
+    >
+
+    <!-- Avatar con icono SVG -->
+    <div class="flex items-center space-x-4 mb-4">
+        <div
+        class="w-14 h-14 rounded-full border-2 border-[#c9b8ff] flex items-center justify-center bg-[#faf8ff]"
+        >
+        <img
+            src="/icons/user.svg"
+            alt="Usuario"
+            class="w-7 h-7 brightness-0 invert-[0.4] opacity-80"
+        />
+        </div>
+
+        <div>
+        <h3 class="font-bold text-gray-900">
+            {name}
+            {age && (
+            <span class="text-gray-500 text-sm ml-1 font-normal">{age} años</span>
+            )}
+        </h3>
+        {city && <p class="text-sm text-gray-600">{city}</p>}
+
+        <div class="flex items-center mt-1">
+            <span class="text-pink-500 text-sm">
+            {"★".repeat(stars).padEnd(5, "☆")}
+            </span>
+        </div>
+        </div>
+    </div>
+
+      {album && (
+        <span
+          class="inline-block bg-[#f7f0ff] text-[#7b30fc] text-xs font-semibold rounded-full px-3 py-1 mb-3"
+        >
+          {album}
+        </span>
+      )}
+
+      {testimonial && (
+        <p class="text-gray-700 mb-4 leading-relaxed">“{testimonial}”</p>
+      )}
+
+      {transformation && (
+        <div class="bg-[#f7fbff] border-l-4 border-[#b57cff] p-3 rounded-md mb-2">
+          <p class="text-[#7b30fc] font-semibold text-sm mb-1">
+            Transformación:
+          </p>
+          <p class="text-gray-600 text-sm">{transformation}</p>
+        </div>
+      )}
+
+      {months && (
+        <p class="text-gray-400 text-xs">
+          Usando productos por:
+          <span class="text-[#7b30fc] font-medium"> {months}</span>
+        </p>
+      )}
+    </div>
+  ) : (
+    <!-- 💎 Modo normal -->
+    <>
+      <button
+        class={`w-16 h-16 mx-auto mb-4 rounded-2xl ${gradient} flex items-center justify-center text-white text-2xl overflow-hidden`}
+      >
+        <img
+          src={image}
+          alt={title}
+          class="w-8 h-8 object-contain brightness-0 invert"
+        />
+      </button>
+      <h3 class="text-lg font-extrabold mb-2">{title}</h3>
+      <p class="text-gray-500 text-sm font-normal leading-relaxed px-4">
+        {description}
+      </p>
+    </>
+  )}
+</div>

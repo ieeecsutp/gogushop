@@ -60,6 +60,17 @@ Si quieres usar Tailwind:
 - Si mueves contenido de Welcome.astro a index.astro, asegúrate de no renderizar Navbar dos veces (uno en Layout y otro en Welcome).
 - Para activar la clase `.active` según la sección visible puedo añadir un IntersectionObserver — dime si lo quieres.
 
+## Nueva sección: Experiencia K-Pop + Testimonios Reales
+
+- Sección "Experiencia K-Pop" con seis beneficios visuales.
+- Sub-sección de reseñas rápidas con íconos dinámicos.
+- Sección "Lo Que Dicen Nuestros Fans" con estadísticas y testimonios reales.
+- Uso del componente Card extendido con tres variantes:
+  - default — cards con íconos e información
+  - compact — cards de estadísticas
+  - testimonial — cards de reseñas con ícono de usuario
+- Optimización del espacio lateral con max-w-[86vw] y px-8.
+
 ## Contribuir / Ajustes
 
 - Añade álbumes en la sección `#albums` en `src/pages/index.astro` o en `src/components`.

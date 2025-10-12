@@ -1,7 +1,208 @@
 ---
-
+import Card from "../components/Card.astro";
 ---
 
-<div class="text-center  text-gray-900">	
- <h1>Albums</h1>
+<div class="text-center text-gray-900">
+    <h1>Albums</h1>
+
+    <!-- Sección: Experiencia Kpop -->
+    <div
+        class="flex flex-col items-center justify-center text-center text-gray-900"
+    >
+        <div class="flex items-center justify-center">
+            <button
+                class="mb-4 bg-gradient-to-r flex items-center justify-center from-purple-500 to-sky-400 text-white font-semibold text-sm py-2 px-4 rounded-lg shadow-sm"
+            >
+                <img
+                    src="/icons/checked.svg"
+                    class="w-4 h-4 brightness-0 invert mr-2"
+                />
+                <span>¿Por Qué Elegir Gogushop?</span>
+            </button>
+        </div>
+        <div class="text-5xl font-extrabold">
+            <span
+                class="bg-gradient-to-r from-[#b25ff5] to-[#e036b0] bg-clip-text text-transparent"
+            >
+                La Experiencia
+            </span>
+            <span
+                class="bg-gradient-to-r from-pink-500 to-[#e036b0] bg-clip-text text-transparent"
+            >
+                K-Pop
+            </span>
+
+            <span
+                class="bg-gradient-to-r from-[#e036b0] to-[#5396c9] bg-clip-text text-transparent"
+            >
+                Definitiva
+            </span>
+        </div>
+        <p class="text-gray-600 mt-3 max-w-3xl mx-auto text-lg">
+            Miles de fans ya confían en nosotros para su colección de álbumes
+            coreanos. Descubre por qué somos la tienda favorita de los amantes
+            del K-Pop.
+        </p>
+
+        <!-- Cards -->
+        <div
+            class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-8xl mx-auto px-[10vw]"
+        >
+            <Card
+                image="/icons/shield.svg"
+                title="Álbumes 100% Auténticos"
+                description="Directamente desde Corea del Sur. Garantía de autenticidad en cada álbum oficial."
+                gradient="bg-gradient-to-r from-[#7b30fc] to-[#6cc0ff]"
+            />
+
+            <Card
+                image="/icons/truck.svg"
+                title="Envío Gratis en Compras +$50"
+                description="nvío gratuito y rápido a todo Perú. Recibe tus álbumes en 3-5 días hábiles."
+                gradient="bg-gradient-to-r from-[#ed2dbd] to-[#17aed4]"
+            />
+
+            <Card
+                image="/icons/gift.svg"
+                title="Photocards Gratis en Cada Pedido"
+                description="Descubre tu bias con photocards exclusivas incluidas en cada álbum."
+                gradient="bg-gradient-to-r from-[#6cc0ff] to-[#7b30fc]"
+            />
+
+            <Card
+                image="/icons/heart.svg"
+                title="Asesoría Personalizada"
+                description="Nuestro equipo de expertos K-Pop te ayuda a encontrar los álbumes perfectos."
+                gradient="bg-gradient-to-r from-[#7b30fc] to-[#e600b0]"
+            />
+
+            <Card
+                image="/icons/clock.svg"
+                title="Devoluciones de 30 Días"
+                description="Si no estás 100% satisfecho, devuelve tu álbum sin complicaciones."
+                gradient="bg-gradient-to-r from-[#e600b0] to-[#7b30fc]"
+            />
+
+            <Card
+                image="/icons/star.svg"
+                title="Ediciones Especiales Garantizadas"
+                description="Solo trabajamos con distribuidores oficiales de los mejores grupos K-Pop."
+                gradient="bg-gradient-to-r from-[#17aed4] to-[#ed2dbd]"
+            />
+        </div>
+
+        <!-- Sección de reseñas, fans y experiencia -->
+        <div
+            class="flex flex-wrap items-center justify-center gap-6 mt-10 text-gray-700 text-sm"
+        >
+            <!-- Reseñas -->
+            <div class="flex items-center space-x-1">
+                <span class="text-pink-500 text-xl">★★★★★</span>
+                <span class="font-semibold text-gray-900">4.9/5</span>
+                <span class="text-gray-500">(2,847 reseñas)</span>
+            </div>
+
+            <!-- Fans -->
+            <div class="flex items-center space-x-2">
+                <img src="/icons/heart.svg" class="w-4 h-4 stroke-[#b57cff]" />
+                <span class="text-[#b57cff] font-medium"
+                    >+15,000 fans satisfechos</span
+                >
+            </div>
+
+            <!-- Años -->
+            <div class="flex items-center space-x-2">
+                <img
+                    src="/icons/sparkle.svg"
+                    class="w-4 h-4"
+                    style="filter: brightness(0) saturate(100%) invert(60%) sepia(43%) saturate(1000%) hue-rotate(160deg) brightness(95%) contrast(90%);"
+                />
+                <span class="text-[#17aed4] font-medium"
+                    >3 años en el mercado</span
+                >
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección: Lo Que Dicen Nuestros Fans -->
+    <section class="mt-28 bg-[#fcf9ff] py-20 text-center text-gray-900">
+        <div class="max-w-[86vw] mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Botón superior -->
+            <div class="flex justify-center mb-4">
+                <button
+                    class="flex items-center bg-gradient-to-r from-[#7b30fc] to-[#17aed4] text-white font-semibold text-sm py-2 px-4 rounded-lg shadow-sm"
+                >
+                    <img
+                        src="/icons/heart.svg"
+                        class="w-4 h-4 stroke-white mr-2 object-contain brightness-0 invert"
+                    />
+                    <span>Testimonios Reales</span>
+                </button>
+            </div>
+
+            <!-- Título con gradiente -->
+            <h2
+                class="text-5xl font-extrabold bg-gradient-to-r from-[#b25ff5] via-[#e036b0] to-[#17aed4] bg-clip-text text-transparent mb-4"
+            >
+                Lo Que Dicen Nuestros Fans
+            </h2>
+
+            <!-- Descripción -->
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-14">
+                Miles de coleccionistas han completado su colección K-Pop con
+                nosotros. Lee sus historias de éxito y experiencias reales.
+            </p>
+
+            <!-- Cuadros de estadísticas -->
+            <div
+                class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center mb-20"
+            >
+                <Card
+                    title="98%"
+                    description="Satisfacción de Fans"
+                    variant="compact"
+                />
+                <Card
+                    title="15,000+"
+                    description="Fans Felices"
+                    variant="compact"
+                />
+                <Card
+                    title="4.9/5"
+                    description="Calificación Promedio"
+                    variant="compact"
+                />
+                <Card
+                    title="8,547"
+                    description="Reseñas Positivas"
+                    variant="compact"
+                />
+            </div>
+
+            <!-- Testimonios -->
+            <div class="grid gap-10 sm:grid-cols-1 lg:grid-cols-2">
+                <Card
+                    variant="testimonial"
+                    name="María González"
+                    age={28}
+                    city="Lima"
+                    album="BTS Map of the Soul: 7"
+                    testimonial="Mi colección nunca había estado tan completa. Los álbumes llegaron en perfecto estado con todas las photocards. ¡Son 100% auténticos y de calidad premium!"
+                    transformation="Mi colección K-Pop se transformó completamente"
+                    months="6 meses"
+                />
+
+                <Card
+                    variant="testimonial"
+                    name="Sofía Ramírez"
+                    age={24}
+                    city="Guadalajara"
+                    album="ENHYPEN Dimension: Dilemma"
+                    testimonial="El servicio al cliente es excepcional y los álbumes llegan súper rápido. DIMENSION: DILEMMA es mi nueva obsesión, las photocards son hermosas."
+                    transformation="Pasé de fan casual a coleccionista seria"
+                    months="4 meses"
+                />
+            </div>
+        </div>
+    </section>
 </div>

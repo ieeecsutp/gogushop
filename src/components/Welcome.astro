@@ -1,25 +1,26 @@
 ---
-import Navbar from './Navbar.astro';
-import '../styles/global.css'
+import Navbar from "./Navbar.astro";
+import "../styles/global.css";
+import Albums from "../pages/albums.astro";
 ---
 
-<div class="text-center  text-gray-900">	
-<Navbar />
+<div class="text-center text-gray-900">
+  <Navbar />
 </div>
-
 
 <main>
   <!-- Sección inicio / hero -->
   <section id="inicio" class="hero">
     <!-- ...existing hero content... -->
-   
   </section>
 
   <!-- Sección Álbumes -->
-  <section id="albums" class="albums-section">
-    <h2>Álbumes</h2>
-    <!-- contenido de álbumes -->
-
+  <section
+    id="albums"
+    class="bg-[#fcfaff] text-center py-20 text-gray-900 font-[Inter]"
+  >
+    <h2 class="text-3xl font-bold mb-10">Álbumes</h2>
+    <Albums />
   </section>
 
   <!-- Sección Fans -->
@@ -39,9 +40,8 @@ import '../styles/global.css'
     <!-- formulario de contacto -->
   </section>
 
-  <section id="footer" class="footer-section">  
+  <section id="footer" class="footer-section">
     <h2>Footer</h2>
     <!-- contenido de footer -->
   </section>
 </main>
-
