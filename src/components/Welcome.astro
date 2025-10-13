@@ -2,6 +2,8 @@
 import Navbar from "./Navbar.astro";
 import "../styles/global.css";
 import Albums from "../pages/albums.astro";
+import Fans from "../pages/fans.astro";
+import Faq from "../pages/faq.astro";
 ---
 
 <div class="text-center text-gray-900">
@@ -19,20 +21,19 @@ import Albums from "../pages/albums.astro";
     id="albums"
     class="bg-[#fcfaff] text-center py-20 text-gray-900 font-[Inter]"
   >
-    <h2 class="text-3xl font-bold mb-10">Álbumes</h2>
     <Albums />
   </section>
 
   <!-- Sección Fans -->
   <section id="fans" class="fans-section">
-    <h2>Fans</h2>
     <!-- contenido de fans -->
+    <Fans />
   </section>
 
   <!-- Sección FAQ -->
   <section id="faq" class="faq-section">
-    <h2>FAQ</h2>
     <!-- preguntas frecuentes -->
+    <Faq />
   </section>
 
   <section id="contact" class="contact-section">

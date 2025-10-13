@@ -9,9 +9,9 @@ import Card from "../components/Card.astro";
     <div
         class="flex flex-col items-center justify-center text-center text-gray-900"
     >
-        <div class="flex items-center justify-center">
+        <div class="flex items-center justify-center mb-4">
             <button
-                class="mb-4 bg-gradient-to-r flex items-center justify-center from-purple-500 to-sky-400 text-white font-semibold text-sm py-2 px-4 rounded-lg shadow-sm"
+                class="flex items-center bg-gradient-to-r from-[#7b30fc] to-[#17aed4] text-white font-semibold text-sm py-2 px-4 rounded-lg shadow-sm"
             >
                 <img
                     src="/icons/checked.svg"
@@ -20,7 +20,7 @@ import Card from "../components/Card.astro";
                 <span>¿Por Qué Elegir Gogushop?</span>
             </button>
         </div>
-        <div class="text-5xl font-extrabold">
+        <div class="text-4xl md:text-5xl font-bold">
             <span
                 class="bg-gradient-to-r from-[#b25ff5] to-[#e036b0] bg-clip-text text-transparent"
             >
@@ -38,7 +38,7 @@ import Card from "../components/Card.astro";
                 Definitiva
             </span>
         </div>
-        <p class="text-gray-600 mt-3 max-w-3xl mx-auto text-lg">
+        <p class="text-gray-600 mt-3 max-w-3xl mx-auto text-lg px-12">
             Miles de fans ya confían en nosotros para su colección de álbumes
             coreanos. Descubre por qué somos la tienda favorita de los amantes
             del K-Pop.
@@ -46,7 +46,7 @@ import Card from "../components/Card.astro";
 
         <!-- Cards -->
         <div
-            class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-8xl mx-auto px-[10vw]"
+            class="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3 max-w-8xl mx-auto px-[3vw] sm:px-[7vw] lg:px-[10vw]"
         >
             <Card
                 image="/icons/shield.svg"
@@ -123,86 +123,4 @@ import Card from "../components/Card.astro";
             </div>
         </div>
     </div>
-
-    <!-- Sección: Lo Que Dicen Nuestros Fans -->
-    <section class="mt-28 bg-[#fcf9ff] py-20 text-center text-gray-900">
-        <div class="max-w-[86vw] mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Botón superior -->
-            <div class="flex justify-center mb-4">
-                <button
-                    class="flex items-center bg-gradient-to-r from-[#7b30fc] to-[#17aed4] text-white font-semibold text-sm py-2 px-4 rounded-lg shadow-sm"
-                >
-                    <img
-                        src="/icons/heart.svg"
-                        class="w-4 h-4 stroke-white mr-2 object-contain brightness-0 invert"
-                    />
-                    <span>Testimonios Reales</span>
-                </button>
-            </div>
-
-            <!-- Título con gradiente -->
-            <h2
-                class="text-5xl font-extrabold bg-gradient-to-r from-[#b25ff5] via-[#e036b0] to-[#17aed4] bg-clip-text text-transparent mb-4"
-            >
-                Lo Que Dicen Nuestros Fans
-            </h2>
-
-            <!-- Descripción -->
-            <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-14">
-                Miles de coleccionistas han completado su colección K-Pop con
-                nosotros. Lee sus historias de éxito y experiencias reales.
-            </p>
-
-            <!-- Cuadros de estadísticas -->
-            <div
-                class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-center mb-20"
-            >
-                <Card
-                    title="98%"
-                    description="Satisfacción de Fans"
-                    variant="compact"
-                />
-                <Card
-                    title="15,000+"
-                    description="Fans Felices"
-                    variant="compact"
-                />
-                <Card
-                    title="4.9/5"
-                    description="Calificación Promedio"
-                    variant="compact"
-                />
-                <Card
-                    title="8,547"
-                    description="Reseñas Positivas"
-                    variant="compact"
-                />
-            </div>
-
-            <!-- Testimonios -->
-            <div class="grid gap-10 sm:grid-cols-1 lg:grid-cols-2">
-                <Card
-                    variant="testimonial"
-                    name="María González"
-                    age={28}
-                    city="Lima"
-                    album="BTS Map of the Soul: 7"
-                    testimonial="Mi colección nunca había estado tan completa. Los álbumes llegaron en perfecto estado con todas las photocards. ¡Son 100% auténticos y de calidad premium!"
-                    transformation="Mi colección K-Pop se transformó completamente"
-                    months="6 meses"
-                />
-
-                <Card
-                    variant="testimonial"
-                    name="Sofía Ramírez"
-                    age={24}
-                    city="Guadalajara"
-                    album="ENHYPEN Dimension: Dilemma"
-                    testimonial="El servicio al cliente es excepcional y los álbumes llegan súper rápido. DIMENSION: DILEMMA es mi nueva obsesión, las photocards son hermosas."
-                    transformation="Pasé de fan casual a coleccionista seria"
-                    months="4 meses"
-                />
-            </div>
-        </div>
-    </section>
 </div>

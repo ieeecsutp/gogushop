@@ -1,0 +1,133 @@
+---
+import Card from "../components/Card.astro";
+---
+
+<!-- Sección: Lo Que Dicen Nuestros Fans -->
+<section class="bg-[#fcf9ff] py-20 text-center text-gray-900">
+    <div class="max-w-[91vw] md:max-w-[86vw] mx-auto sm:px-6 lg:px-8">
+        <!-- Botón superior -->
+        <div class="flex justify-center mb-4">
+            <button
+                class="flex items-center bg-gradient-to-r from-[#7b30fc] to-[#17aed4] text-white font-semibold text-sm py-2 px-4 rounded-lg shadow-sm"
+            >
+                <img
+                    src="/icons/heart.svg"
+                    class="w-4 h-4 stroke-white mr-2 object-contain brightness-0 invert"
+                />
+                <span>Testimonios Reales</span>
+            </button>
+        </div>
+
+        <!-- Título con gradiente -->
+        <h2
+            class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#b25ff5] via-[#e036b0] to-[#17aed4] bg-clip-text text-transparent mb-4"
+        >
+            Lo Que Dicen Nuestros Fans
+        </h2>
+
+        <!-- Descripción -->
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-14">
+            Miles de coleccionistas han completado su colección K-Pop con
+            nosotros. Lee sus historias de éxito y experiencias reales.
+        </p>
+
+        <!-- Cuadros de estadísticas -->
+        <div
+            class="grid gap-8 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 justify-center mb-20"
+        >
+            <Card
+                title="98%"
+                description="Satisfacción de Fans"
+                variant="compact"
+            />
+            <Card
+                title="15,000+"
+                description="Fans Felices"
+                variant="compact"
+            />
+            <Card
+                title="4.9/5"
+                description="Calificación Promedio"
+                variant="compact"
+            />
+            <Card
+                title="8,547"
+                description="Reseñas Positivas"
+                variant="compact"
+            />
+        </div>
+
+        <!-- Testimonios -->
+        <div class="grid gap-10 sm:grid-cols-1 lg:grid-cols-2">
+            <Card
+                variant="testimonial"
+                name="María González"
+                age={28}
+                city="Lima"
+                album="BTS Map of the Soul: 7"
+                testimonial="Mi colección nunca había estado tan completa. Los álbumes llegaron en perfecto estado con todas las photocards. ¡Son 100% auténticos y de calidad premium!"
+                transformation="Mi colección K-Pop se transformó completamente"
+                months="6 meses"
+            />
+            <Card
+                variant="testimonial"
+                name="Sofía Ramírez"
+                age={24}
+                city="Guadalajara"
+                album="ENHYPEN Dimension: Dilemma"
+                testimonial="El servicio al cliente es excepcional y los álbumes llegan súper rápido. DIMENSION: DILEMMA es mi nueva obsesión, las photocards son hermosas."
+                transformation="Pasé de fan casual a coleccionista seria"
+                months="4 meses"
+            />
+            <Card
+                variant="testimonial"
+                name="Ana Delgado"
+                age={32}
+                city="Olivos"
+                album="TWICE Formula of Love"
+                testimonial="Gogushop Music es mi tienda de confianza para K-Pop. Los precios son justos, la calidad es increíble y siempre incluyen photocards extras que me encantan."
+                transformation="Mi colección TWICE finalmente está completa"
+                months="12 meses"
+            />
+            <Card
+                variant="testimonial"
+                name="Carla Mendoza"
+                age={24}
+                city="San isidro"
+                album="Colección Completa K-Pop"
+                testimonial="Compré mi primer álbum hace 8 meses y desde entonces soy fan fiel. Los álbumes superaron mis expectativas y el equipo me ayudó a elegir perfectamente."
+                transformation="De principiante a experta coleccionista K-Pop"
+                months="8 meses"
+            />
+        </div>
+
+        <!-- únete -->
+        <div class="flex justify-center mt-20">
+            <Card
+                className="w-[800px]"
+                variant="join"
+                title="¡Únete a Miles de Fans Satisfechos!"
+                description="Cada día más coleccionistas descubren los mejores álbumes K-Pop con Gogushop Music. ¿Estás listo para completar tu colección?"
+                badges={[
+                    {
+                        icon: "/icons/checked.svg",
+                        text: "Álbumes Auténticos",
+                        color: "#7b30fc",
+                    },
+                    {
+                        icon: "/icons/truck.svg",
+                        text: "Envío Gratis +$50",
+                        color: "#e036b0",
+                    },
+                    {
+                        icon: "/icons/clock.svg",
+                        text: "Garantía 30 Días",
+                        color: "#17aed4",
+                    },
+                ]}
+                rating="4.9/5"
+                reviews="8,547"
+            />
+        </div>
+    </div>
+</section>
