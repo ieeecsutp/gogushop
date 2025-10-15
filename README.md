@@ -1,7 +1,6 @@
 <!-- 🎵 GOGUSHOP MUSIC — LANDING PAGE -->
-<p align="center">
-  <img src="https://i.imgur.com/YOUR_CUSTOM_BANNER.png" alt="Gogushop Music Banner" width="100%"/>
-</p>
+![Uploading image.png…]()
+
 
 <h1 align="center">🎶 Gogushop Music — Landing Page K-Pop</h1>
 <p align="center">
