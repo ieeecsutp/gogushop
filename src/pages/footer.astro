@@ -1,0 +1,242 @@
+---
+// Eliminamos la importación de lucide-react, ya que usaremos SVG nativo.
+// import { Heart, Mail, Instagram, Facebook, MessageCircle, MapPin, Phone, Award, ShoppingCart } from 'lucide-react';
+
+const quickLinks = [
+  { name: 'Inicio', href: '#home' },
+  { name: 'Catálogo', href: '#catalog' },
+  { name: 'Acerca de Nosotros', href: '#about' },
+  { name: 'Contacto', href: '#contact' }
+];
+
+const categories = [
+  { name: 'Álbumes BTS', href: '#' },
+  { name: 'Álbumes ENHYPEN', href: '#' },
+  { name: 'Álbumes TXT', href: '#' },
+  { name: 'Álbumes TWICE & IVE', href: '#' }
+];
+
+const policies = [
+  { name: 'Política de Privacidad', href: '#' },
+  { name: 'Términos de Servicio', href: '#' },
+  { name: 'Envíos y Devoluciones', href: '#' },
+  { name: 'Preguntas Frecuentes', href: '#' }
+];
+
+// Definición de colores personalizados basados en la imagen (Morado suave/Lavanda)
+const colorPurple = '#7c3aed'; // Morado vivo (Morado-600)
+const colorLavender = '#e9d5ff'; // Lavanda suave (Morado-200) para fondos sutiles
+const colorText = '#5b21b6'; // Morado oscuro (Morado-700) para texto/títulos
+---
+
+
+ <footer class="bg-white border-t border-gray-100">
+  <div class="container mx-auto px-4 py-16 max-w-7xl justify-center items-center">
+    
+    {/* Simplified CTA Section - Centered and using soft colors */}
+    <div class="text-center mb-16">
+      <div class="max-w-xl mx-auto">
+        <h3 class="text-xl font-medium mb-3 text-gray-700">
+          ¿Listo para Completar tu Colección K-Pop?
+        </h3>
+        <p class="text-sm text-gray-500 mb-6">
+          Descubre por qué +15,000 fans confían en Gogushop Music para su colección de álbumes coreanos
+        </p>
+        
+        {/* Button style matching the image's gradient (soft purple/lavender) */}
+        <button
+          style={`background-image: linear-gradient(to right, ${colorLavender}, ${colorPurple});`}
+          class="inline-flex items-center justify-center text-white  px-6 py-2.5  rounded-lg transition-all duration-300 font-semibold shadow-md hover:opacity-90"
+        >
+          {/* ShoppingCart icon replaced with SVG */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 mr-2">
+            <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+          </svg>
+          Comprar Ahora con 25% OFF
+        </button>
+       </div>
+      </div>
+
+    {/* Main Footer Content - Adjusted column alignment */}
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 ">
+      {/* Brand Section */}
+      <div class="space-y-4">
+        <div class="flex items-center space-x-2">
+          {/* Adjusted Brand Icon Style - Morado-100 background, Morado-700 color */}
+          <div class="bg-gradient-to-r from-primary via-secondary to-accent p-3 rounded-full">
+            {/* Heart icon replaced with SVG */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" style={`color: ${colorText};`}>
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h1 style={`color: ${colorText};`} class="text-xl font-bold">
+              Gogushop
+            </h1>
+            <p class="text-xs text-gray-500">Korea Style</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Tu destino para álbumes auténticos de K-Pop directo desde Corea del Sur. 
+          Colecciona los mejores grupos con photocards exclusivas y ediciones especiales.
+        </p>
+        <div class="flex space-x-4">
+          {/* Social Icons adjusted to Lavender/Purple style - No outline, just fill color */}
+          {/* Instagram icon replaced with SVG */}
+          <button
+            class="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
+            aria-label="Instagram"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
+            </svg>
+          </button>
+          {/* Facebook icon replaced with SVG */}
+          <button
+            class="border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300"
+            aria-label="Facebook"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </button>
+          {/* MessageCircle icon replaced with SVG */}
+          <button
+            class="border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
+            aria-label="Message"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div class="md:col-span-1">
+        <h4 style={`color: ${colorText};`} class="font-bold mb-4">Enlaces Rápidos</h4>
+        <ul class="space-y-3">
+          {quickLinks.map((link) => (
+            <li>
+              <a 
+                href={link.href}
+                class="text-sm text-gray-600 hover:text-purple-600 transition-colors duration-300 cursor-pointer"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Categories */}
+      <div class="md:col-span-1">
+        <h4 style={`color: ${colorText};`} class="font-bold mb-4">Categorías</h4>
+        <ul class="space-y-3">
+          {categories.map((category) => (
+            <li>
+              <a 
+                href={category.href}
+                class="text-sm text-gray-600 hover:text-purple-600 transition-colors duration-300 cursor-pointer"
+              >
+                {category.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div class="md:col-span-1">
+        <h4 style={`color: ${colorText};`} class="font-bold mb-4">Contacto</h4>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            {/* MapPin icon replaced with SVG */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 mt-0.5" style={`color: ${colorText};`}>
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div>
+              <p class="text-sm text-gray-600">K-Town District</p>
+              <p class="text-sm text-gray-600">Ciudad de México</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            {/* Phone icon replaced with SVG */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" style={`color: ${colorText};`}>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 3.08 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <p class="text-sm text-gray-600">+1 (555) 123-4567</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            {/* Mail icon replaced with SVG */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" style={`color: ${colorText};`}>
+              <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.83 1.83 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <p class="text-sm text-gray-600">hola@gogushop.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Trust Badges - Exactly matching the image's style (subtle lavender background and purple border) */}
+    <div class="flex flex-wrap justify-center gap-6 py-8 border-t border-purple-100 mb-4">
+      
+      {/* Badge 1: Álbumes Auténticos (Morado/Lavender) */}
+      <div class="flex items-center space-x-2 px-4 py-2 rounded-full border border-purple-300 bg-purple-50">
+        {/* Award icon replaced with SVG */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" style={`color: ${colorPurple};`}>
+          <path d="m15.46 15.46-3.75 3.75a2.5 2.9 0 0 1-3.69-.39L3.38 12.38a2.5 2.9 0 0 1-.38-3.68l3.75-3.75"/><circle cx="12" cy="12" r="7"/>
+        </svg>
+        <span class="text-xs font-medium" style={`color: ${colorText};`}>Álbumes Auténticos</span>
+      </div>
+      
+      {/* Badge 2: Envío Gratis (Rosa/Lavender) */}
+      <div class="flex items-center space-x-2 px-4 py-2 rounded-full border border-pink-300 bg-pink-50">
+        {/* Heart icon replaced with SVG */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-pink-500">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" fill="currentColor"/>
+        </svg>
+        <span class="text-xs font-medium text-pink-600">Envío Gratis +$50</span>
+      </div>
+      
+      {/* Badge 3: Garantía de Calidad (Azul/Lavender) */}
+      <div class="flex items-center space-x-2 px-4 py-2 rounded-full border border-blue-300 bg-blue-50">
+        {/* Award icon replaced with SVG */}
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-blue-500">
+          <path d="m15.46 15.46-3.75 3.75a2.5 2.9 0 0 1-3.69-.39L3.38 12.38a2.5 2.9 0 0 1-.38-3.68l3.75-3.75"/><circle cx="12" cy="12" r="7"/>
+        </svg>
+        <span class="text-xs font-medium text-blue-600">Garantía de Calidad</span>
+      </div>
+    </div>
+
+    {/* Bottom Section - Adjusted alignment and colors */}
+    <div class="flex flex-col md:flex-row justify-between items-center pt-8 space-y-4 md:space-y-0 text-xs border-t border-gray-100">
+      {/* Copyright/Heart section - Left aligned */}
+      <div class="text-center md:text-left text-gray-500">
+        <p>
+          © 2024 Gogushop. Todos los derechos reservados.
+        </p>
+        <p class="mt-1">
+          Hecho con 
+          {/* Heart icon replaced with SVG */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 inline align-middle" style={`color: ${colorPurple};`}>
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          para los fans del K-Pop
+        </p>
+      </div>
+      
+      {/* Policies section - Right aligned and subtle colors */}
+      <div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-gray-600">
+        {policies.map((policy) => (
+          <a 
+            href={policy.href}
+            class="hover:text-purple-600 transition-colors duration-300 cursor-pointer"
+          >
+            {policy.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>

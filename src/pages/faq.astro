@@ -1,0 +1,189 @@
+---
+import Card from "../components/Card.astro";
+import FaqItem from "../components/FaqItem.astro";
+---
+
+<!-- Sección: Preguntas Frecuentes -->
+<section id="faq" class="bg-[#fcfaff] py-24 text-center text-gray-900">
+    <div class="max-w-[97vw] md:max-w-[86vw] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Botón superior -->
+        <div class="flex justify-center mb-6">
+            <button
+                class="flex items-center bg-gradient-to-r from-[#7b30fc] to-[#17aed4] text-white font-semibold text-sm py-2 px-5 rounded-lg shadow-sm"
+            >
+                <img
+                    src="/icons/help.svg"
+                    class="w-4 h-4 brightness-0 invert mr-2 object-contain"
+                />
+                <span>Preguntas Frecuentes</span>
+            </button>
+        </div>
+
+        <!-- Título -->
+        <h2
+            class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#7b30fc] via-[#e036b0] to-[#17aed4] bg-clip-text text-transparent mb-4"
+        >
+            Resolvemos <span class="text-[#e036b0]">Todas Tus Dudas</span>
+        </h2>
+
+        <!-- Descripción -->
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg mb-16">
+            Encuentra respuestas a las preguntas más comunes sobre nuestros
+            álbumes, envíos y políticas. Si no encuentras lo que buscas,
+            ¡contáctanos!
+        </p>
+
+        <!-- Íconos principales (usando Card normal) -->
+        <div
+            class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center mb-20"
+        >
+            <Card
+                image="/icons/shield.svg"
+                title="Álbumes Auténticos"
+                description="100% garantizado"
+                gradient="bg-gradient-to-r from-[#7b30fc] to-[#6ec6db]"
+            />
+            <Card
+                image="/icons/truck.svg"
+                title="Envío Gratis"
+                description="En compras +$50"
+                gradient="bg-gradient-to-r from-[#7b30fc] to-[#6ec6db]"
+            />
+            <Card
+                image="/icons/refresh.svg"
+                title="Devoluciones"
+                description="30 días sin preguntas"
+                gradient="bg-gradient-to-r from-[#7b30fc] to-[#6ec6db]"
+            />
+            <Card
+                image="/icons/chat.svg"
+                title="Soporte 24/7"
+                description="Estamos aquí para ti"
+                gradient="bg-gradient-to-r from-[#7b30fc] to-[#6ec6db]"
+            />
+        </div>
+
+        <!-- Acordeones FAQ -->
+        <FaqItem
+            icon="/icons/shield.svg"
+            tag="Autenticidad"
+            tagColor="#7b30fc"
+            gradient="from-[#7b30fc] to-[#17aed4]"
+            question="¿Los álbumes son realmente auténticos de Corea?"
+            answer="Sí, garantizamos 100% la autenticidad de todos nuestros álbumes. Trabajamos directamente con distribuidores oficiales en Corea del Sur y cada álbum cuenta con códigos de verificación holográfica. Ofrecemos garantía de autenticidad o te devolvemos tu dinero."
+        />
+
+        <FaqItem
+            icon="/icons/truck.svg"
+            tag="Envíos"
+            tagColor="#7b30fc"
+            gradient="from-[#7b30fc] to-[#17aed4]"
+            question="¿Cuánto tiempo tarda en llegar mi pedido?"
+            answer="Los envíos nacionales tardan de 3-5 días hábiles. Para pedidos mayores a $50 pesos, el envío es completamente gratis. Recibirás un código de rastreo para seguir tu paquete en tiempo real."
+        />
+
+        <FaqItem
+            icon="/icons/refresh.svg"
+            tag="Devoluciones"
+            tagColor="#7b30fc"
+            gradient="from-[#7b30fc] to-[#17aed4]"
+            question="¿Puedo devolver un álbum si no me gusta?"
+            answer="Por supuesto. Tienes 30 días para devolver cualquier álbum sin abrir. Solo necesitas contactarnos y te enviaremos las instrucciones. Los gastos de devolución corren por nuestra cuenta si el álbum tiene algún defecto de fábrica."
+        />
+
+        <FaqItem
+            icon="/icons/help.svg"
+            tag="Photocards"
+            tagColor="#7b30fc"
+            gradient="from-[#7b30fc] to-[#17aed4]"
+            question="¿Las photocards están incluidas en cada álbum?"
+            answer="Sí, todos nuestros álbumes incluyen las photocards oficiales que vienen de fábrica. Además, agregamos photocards exclusivas de regalo en cada pedido. Nuestro equipo puede asesorarte sobre qué álbumes incluyen tus bias favoritos."
+        />
+
+        <FaqItem
+            icon="/icons/chat.svg"
+            tag="Asesoría"
+            tagColor="#7b30fc"
+            gradient="from-[#7b30fc] to-[#17aed4]"
+            question="¿Ofrecen asesoría personalizada para elegir álbumes?"
+            answer="Sí, nuestro equipo de expertos K-Pop está disponible para asesorarte vía WhatsApp, correo o chat en vivo. Podemos recomendarte álbumes personalizados según tus grupos favoritos y ayudarte a completar tu colección."
+        />
+
+        <FaqItem
+            icon="/icons/clock.svg"
+            tag="Precios"
+            tagColor="#7b30fc"
+            gradient="from-[#7b30fc] to-[#17aed4]"
+            question="¿Los precios incluyen impuestos y no hay costos ocultos?"
+            answer="Los precios mostrados en nuestra web son finales e incluyen todos los impuestos. No hay costos ocultos. Solo se agrega el costo de envío si tu pedido es menor a $50 pesos."
+        />
+        <div class="flex justify-center">
+            <Card
+                className="w-[800px] mt-20"
+                variant="join"
+                title="¿Aún Tienes Preguntas?"
+                description="Nuestro equipo de expertos K-Pop está disponible para ayudarte. Contáctanos por el medio que prefieras y te responderemos en menos de 2 horas."
+                badges={[
+                    {
+                        icon: "/icons/chat.svg",
+                        text: "Chat en Vivo",
+                        color: "#7b30fc",
+                    },
+                    {
+                        icon: "/icons/whatsapp.svg",
+                        text: "WhatsApp",
+                        color: "#17aed4",
+                    },
+                ]}
+                note="Tiempo de respuesta promedio: "
+                time="1.5 horas"
+            />
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const faqs = document.querySelectorAll(".faq-item");
+
+        faqs.forEach((faq) => {
+            const header = faq.querySelector(
+                ".faq-header",
+            ) as HTMLElement | null;
+            const content = faq.querySelector(
+                ".faq-content",
+            ) as HTMLElement | null;
+            const icon = faq.querySelector(".faq-icon") as HTMLElement | null;
+
+            if (!header || !content || !icon) return;
+
+            header.addEventListener("click", () => {
+                const isOpen =
+                    content.style.maxHeight &&
+                    content.style.maxHeight !== "0px";
+
+                // Cerrar todos los demás acordeones
+                document
+                    .querySelectorAll<HTMLElement>(".faq-content")
+                    .forEach((c) => {
+                        c.style.maxHeight = "";
+                    });
+
+                document
+                    .querySelectorAll<HTMLElement>(".faq-icon")
+                    .forEach((i) => {
+                        i.classList.remove("rotate-180");
+                    });
+
+                // Alternar el actual
+                if (!isOpen) {
+                    content.style.maxHeight = `${content.scrollHeight}px`;
+                    icon.classList.add("rotate-180");
+                } else {
+                    content.style.maxHeight = "";
+                    icon.classList.remove("rotate-180");
+                }
+            });
+        });
+    });
+</script>

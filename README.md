@@ -68,3 +68,51 @@ Si quieres usar Tailwind:
 ---
 
 Proyecto creado con Astro. Si quieres, aplico la configuración Tailwind y añado un ejemplo de hero con clases Tailwind.
+
+---
+
+## ✨ Actualizaciones de diseño y componentes
+
+### 🎶 Sección: Álbumes — Experiencia K-Pop
+- Añadida sección “Experiencia K-Pop” con seis beneficios visuales que muestran por qué elegir Gogushop.  
+- Incluye una sub-sección de reseñas rápidas con valoraciones, cantidad de fans y años en el mercado.  
+- Implementa el componente Card con íconos e información de beneficios.  
+- Ajustes de diseño centrado, degradados y espaciado optimizado.
+
+### 💜 Sección: Fans — Testimonios Reales
+- Añadida la sección “Lo Que Dicen Nuestros Fans” con estadísticas y testimonios detallados.  
+- Incluye cuatro métricas visuales de satisfacción y cuatro testimonios de fans reales.  
+- Implementada una sub-sección final con llamada a la acción (Join) que invita a unirse a la comunidad K-Pop.  
+- Incluye ícono SVG de comillas decorativas y textos cursivos para las transformaciones.
+
+### 💬 Sección: Preguntas Frecuentes (FAQ)
+- Añadida sección “Preguntas Frecuentes” con íconos principales para Álbumes, Envíos, Devoluciones y Soporte.  
+- Implementado componente reutilizable `FaqItem.astro` con propiedades dinámicas (`icon`, `tag`, `tagColor`, `gradient`, `question`, `answer`).  
+- Usa animaciones nativas de apertura/cierre con rotación de ícono y transiciones suaves.  
+
+### 🧩 Componente: FaqItem.astro
+- Nuevo componente modular que representa cada bloque de pregunta/respuesta.  
+- Props: `icon`, `tag`, `tagColor`, `gradient`, `question`, `answer`.  
+- Animación con `addEventListener` sin dependencias externas, 100% compatible con Astro.
+
+### 🪄 Componente: Card.astro
+- Extendido con variantes `testimonial`, `compact` y `join`.  
+- Nuevas props: `note`, `time`, `badges`, `rating`, `reviews`, `transformation`.  
+- Incluye soporte para íconos SVG coloreables mediante `mask` y `-webkit-mask`.  
+- Textos transformados en cursiva (`italic`) y citas visuales con ícono `quote.svg`.
+
+### ⚙️ Integración en la estructura principal
+- Modularización completa:
+  - `Albums.astro` → sección de experiencia K-Pop.  
+  - `Fans.astro` → testimonios y métricas.  
+  - `Faq.astro` → preguntas frecuentes.  
+- En `welcome.astro` se integran directamente:
+
+  ```astro
+  import Albums from "../pages/albums.astro";
+  import Fans from "../pages/fans.astro";
+  import Faq from "../pages/faq.astro";
+
+  <section id="albums"><Albums /></section>
+  <section id="fans"><Fans /></section>
+  <section id="faq"><Faq /></section>

@@ -1,0 +1,179 @@
+---
+interface Props {
+  image?: string;
+  title?: string;
+  description?: string;
+  gradient?: string;
+  variant?: "default" | "compact" | "testimonial" | "join";
+  sizeClass?: string;
+  className?: string;
+  note?: string;
+  time?: string;
+
+  // Props específicas para "compact" y "join"
+  badges?: { icon: string; text: string; color?: string }[];
+  rating?: string;
+  reviews?: string;
+
+  // Props para modo testimonial
+  name?: string;
+  age?: number;
+  city?: string;
+  album?: string;
+  testimonial?: string;
+  transformation?: string;
+  months?: string;
+  verified?: boolean;
+  stars?: number;
+}
+
+const {
+  image,
+  title,
+  description,
+  gradient = "bg-gradient-to-tr from-[#b57cff] to-[#6ec6db]",
+  variant = "default",
+  sizeClass = "py-7 px-6 text-base",
+  className = "",
+  note = "",
+  time = "",
+  badges = [],
+  rating,
+  reviews,
+  name,
+  age,
+  city,
+  album,
+  testimonial,
+  transformation,
+  months,
+  verified = true,
+  stars = 5,
+} = Astro.props as Props;
+---
+
+{variant === "join" ? (
+  <!-- Modo más -->
+  <div
+    class={`flex flex-col items-center text-center px-8 py-10 bg-gradient-to-r from-[#f8f3ff] to-[#f0faff] border border-[#e0d7ff]/70 rounded-2xl shadow-md ${className}`}
+  >
+    <h3 class="text-2xl sm:text-3xl font-bold text-transparent bg-gradient-to-r from-[#7b30fc] to-[#17aed4] bg-clip-text mb-3">
+      {title}
+    </h3>
+
+    <p class="text-gray-600 max-w-xl mx-auto mb-6 leading-relaxed">{description}</p>
+   {badges.length > 0 && (
+    <div class="flex flex-wrap justify-center gap-3 mb-6">
+        {badges.map((b) => (
+        <span
+            class="flex items-center gap-2 px-5 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:shadow-sm transition"
+        >
+            <span
+            class="w-5 h-5 inline-block"
+            style={`mask: url(${b.icon}) no-repeat center / contain; -webkit-mask: url(${b.icon}) no-repeat center / contain; background-color: ${
+                b.color || "#7b30fc"
+            };`}
+            ></span>
+            {b.text}
+        </span>
+        ))}
+    </div>
+    )}
+    {rating && reviews && (
+      <p class="text-sm text-gray-600">
+        <span class="text-pink-500 font-semibold mr-1">★ {rating}</span>
+        basado en <span class="font-medium">{reviews}</span> reseñas verificadas
+      </p>
+    )}
+    <p class="text-sm text-gray-600">{note}
+    <span class="text-purple-500 font-bold">{time}</span></p>
+  </div>
+) : (
+  <div
+    class={`bg-white border border-violet-100 rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ${sizeClass} ${className}`}
+  >
+    {variant === "compact" ? (
+      <!-- Modo compacto -->
+      <div>
+        <h3 class="text-3xl font-bold text-purple-500 mb-2">{title}</h3>
+        <p class="text-gray-600 font-medium">{description}</p>
+      </div>
+    ) : variant === "testimonial" ? (
+      <!-- Modo testimonial -->
+      <div class="text-left relative p-4">
+        <img
+        src="/icons/quote.svg"
+        alt="quote"
+        class="absolute top-2 right-3 w-7 h-7 opacity-30 drop-shadow-[0_0_3px_#e7dcff]"
+        />
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="w-14 h-14 rounded-full border-2 border-[#c9b8ff] flex items-center justify-center bg-[#faf8ff]">
+            <img
+              src="/icons/user.svg"
+              alt="Usuario"
+              class="w-7 h-7 brightness-0 invert-[0.4] opacity-80"
+            />
+          </div>
+
+          <div>
+            <h3 class="font-bold text-gray-900">
+              {name}
+              {age && (
+                <span class="text-gray-500 text-sm ml-1 font-normal">{age} años</span>
+              )}
+            </h3>
+            {city && <p class="text-sm text-gray-600">{city}</p>}
+            <div class="flex items-center mt-1">
+              <span class="text-pink-500 text-sm">
+                {"★".repeat(stars).padEnd(5, "☆")}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {album && (
+          <span
+            class="inline-block bg-[#f7f0ff] text-[#7b30fc] text-xs font-semibold rounded-full px-3 py-1 mb-3"
+          >
+            {album}
+          </span>
+        )}
+
+        {testimonial && (
+          <p class="text-gray-700 mb-4 leading-relaxed italic">“{testimonial}”</p>
+        )}
+
+        {transformation && (
+          <div class="bg-[#f5f1f5] p-3 rounded-md mb-2">
+            <p class="text-[#7b30fc] font-semibold text-sm mb-1">Transformación:</p>
+            <p class="text-gray-600 text-sm">{transformation}</p>
+          </div>
+        )}
+
+        {months && (
+          <p class="text-gray-500 flex justify-between text-sm mt-4">
+            Usando productos por:
+            <span class="text-[#7b30fc] font-medium"> {months}</span>
+          </p>
+        )}
+      </div>
+    ) : (
+      <!-- Modo normal -->
+      <>
+        <button
+          class={`w-16 h-16 mx-auto mb-4 rounded-2xl ${gradient} flex items-center justify-center text-white text-2xl overflow-hidden`}
+        >
+          <img
+            src={image}
+            alt={title}
+            class="w-8 h-8 object-contain brightness-0 invert"
+          />
+        </button>
+        <h3 class="text-lg font-bold mb-2">{title}</h3>
+        <p class="text-gray-500 text-sm font-normal leading-relaxed px-4">
+          {description}
+        </p>
+      </>
+    )}
+  </div>
+)}
