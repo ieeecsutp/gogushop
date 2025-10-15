@@ -4,6 +4,9 @@ import "../styles/global.css";
 import Albums from "../pages/albums.astro";
 import Fans from "../pages/fans.astro";
 import Faq from "../pages/faq.astro";
+import Home from "../pages/home.astro"
+import Footer from "../pages/footer.astro";
+import Ofert from "../pages/ofert.astro"
 ---
 
 <div class="text-center text-gray-900">
@@ -13,7 +16,9 @@ import Faq from "../pages/faq.astro";
 <main>
   <!-- Sección inicio / hero -->
   <section id="inicio" class="hero">
-    <!-- ...existing hero content... -->
+
+<Home />
+
   </section>
 
   <!-- Sección Álbumes -->
@@ -40,9 +45,11 @@ import Faq from "../pages/faq.astro";
     <h2>Contacto</h2>
     <!-- formulario de contacto -->
   </section>
+  <section>
+  <Ofert />
+  </section>
 
   <section id="footer" class="footer-section">
-    <h2>Footer</h2>
-    <!-- contenido de footer -->
+    <Footer />
   </section>
 </main>
