@@ -43,10 +43,6 @@ Diseñada con un estilo **juvenil, elegante y dinámico**, ofrece una navegació
  ┗ 📜 astro.config.mjs
 astro.config.mjs
 ```
-<<<<<<< HEAD
-
-=======
->>>>>>> 2a7a2b6d07bbab28d6ebe2cede637743400551ef
 ---
 
 ## 🚀 **Requisitos Previos**
@@ -75,7 +71,6 @@ Luego abre 👉 http://localhost:4321
 
 #inicio | #albums | #fans | #faq | #contact | #footer
 🏗️ Build y Previsualización
-<<<<<<< HEAD
 
 ```
 pnpm run build # Construye versión de producción
@@ -119,40 +114,6 @@ pnpm run dev
 
 - 🌟 Sub-sección de reseñas rápidas (valoraciones, fans, años de experiencia).
 
-=======
-```
-pnpm run build # Construye versión de producción
-pnpm run preview # Previsualiza build optimizada
-```
-🌈 Integración con Tailwind (opcional pero recomendada)
-
-Instalar dependencias:
-```
-pnpm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
-Configurar tailwind.config.js:
-```
-content: ["./src/**/*.{astro,html,js,ts,jsx,tsx}"]
-```
-En src/styles/global.css añade al inicio:
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-Reinicia el servidor:
-```
-pnpm run dev
-```
-✨ Actualizaciones de Diseño y Nuevos Componentes
-### 💿 Sección: Álbumes — Experiencia K-Pop
-
-- 🔹 Seis beneficios visuales que muestran por qué elegir Gogushop.
-
-- 🌟 Sub-sección de reseñas rápidas (valoraciones, fans, años de experiencia).
-
->>>>>>> 2a7a2b6d07bbab28d6ebe2cede637743400551ef
 - 💠 Nuevo componente Card.astro con degradados e íconos SVG coloreables.
 
 ### 💜 Sección: Fans — Testimonios Reales
@@ -168,7 +129,6 @@ pnpm run dev
 - ❓ Íconos principales para Álbumes, Envíos, Devoluciones y Soporte.
 
 - 🪄 Componente modular FaqItem.astro con props dinámicas:
-<<<<<<< HEAD
 
 ```
 icon, tag, tagColor, gradient, question, answer
@@ -188,24 +148,6 @@ import Faq from "../pages/faq.astro";
 <section id="faq"><Faq /></section>
 
 ```
-=======
-```
-icon, tag, tagColor, gradient, question, answer
-```
-- 💫 Animación nativa con addEventListener y rotación del ícono al abrir/cerrar.
-
-⚙️ Integración General en el Layout
-~~~astro
-import Albums from "../pages/albums.astro";
-import Fans from "../pages/fans.astro";
-import Faq from "../pages/faq.astro";
-
-<section id="albums"><Albums /></section>
-<section id="fans"><Fans /></section>
-<section id="faq"><Faq /></section>
-
-~~~
->>>>>>> 2a7a2b6d07bbab28d6ebe2cede637743400551ef
 
 - 🧠 Evita renderizar el Navbar dos veces (ya viene desde Layout.astro).
 
@@ -217,19 +159,11 @@ import Faq from "../pages/faq.astro";
 
 - 🛒 Si deseas integrar un carrito de compras, puedo ayudarte a conectarlo con:
 
-<<<<<<< HEAD
   - localStorage
 
   - store de Astro o React
 
   - Backend (API REST / Supabase / Firebase)
-=======
-   - localStorage
-
-   - store de Astro o React
-
-   - Backend (API REST / Supabase / Firebase)
->>>>>>> 2a7a2b6d07bbab28d6ebe2cede637743400551ef
 
 ### 🛠️ Contribuir / Personalizar
 
