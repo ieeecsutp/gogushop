@@ -1,47 +1,655 @@
 ---
 import Navbar from './Navbar.astro';
-import '../styles/global.css'
+import '../styles/global.css';
+
+import img1 from '../imgs/btbs.png';
+import img2 from '../imgs/image.png';
+import imgFooterBg from '../imgs/btbs.png';
+import imgLogo from '../imgs/image.png';
 ---
 
+
 <div class="text-center  text-gray-900">	
-<Navbar />
-</div>
+  <Navbar />
+</div> 
 
 
 <main>
-  <!-- Sección inicio / hero -->
   <section id="inicio" class="hero">
-    <!-- ...existing hero content... -->
-   
+    <!-- Carousel -->
+    <div class="carousel" aria-roledescription="carousel">
+      <div class="carousel-track" role="list">
+        <div class="carousel-slide" role="listitem" style={`--bg: url('${img1}')`}>
+          <div class="slide-overlay">
+            <h2 class="slide-title">Gogushop Music</h2>
+            <p class="slide-sub">Encuentra álbumes K‑Pop exclusivos</p>
+          </div> 
+        </div>
+
+        <div class="carousel-slide" role="listitem" style={`--bg: url('${img2}')`}>
+          <div class="slide-overlay">
+            <h2 class="slide-title">Nuevas Llegadas</h2>
+            <p class="slide-sub">Ediciones limitadas y posters incluidos</p>
+          </div>
+        </div>
+
+        <div class="carousel-slide" role="listitem" style={`--bg: url('${img1}')`}>
+          <div class="slide-overlay">
+            <h2 class="slide-title">Envíos a todo el mundo</h2>
+            <p class="slide-sub">Rápido y seguro</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn prev" aria-label="Anterior">‹</button>
+      <button class="carousel-btn next" aria-label="Siguiente">›</button>
+
+      <div class="carousel-dots" role="tablist" aria-label="Indicadores">
+        <button class="dot active" aria-selected="true" role="tab" aria-controls="slide-0"></button>
+        <button class="dot" role="tab" aria-controls="slide-1"></button>
+        <button class="dot" role="tab" aria-controls="slide-2"></button>
+      </div>
+    </div>
   </section>
 
   <!-- Sección Álbumes -->
   <section id="albums" class="albums-section">
     <h2>Álbumes</h2>
-    <!-- contenido de álbumes -->
-
   </section>
 
   <!-- Sección Fans -->
   <section id="fans" class="fans-section">
     <h2>Fans</h2>
-    <!-- contenido de fans -->
   </section>
 
   <!-- Sección FAQ -->
   <section id="faq" class="faq-section">
     <h2>FAQ</h2>
-    <!-- preguntas frecuentes -->
   </section>
 
   <section id="contact" class="contact-section">
     <h2>Contacto</h2>
-    <!-- formulario de contacto -->
   </section>
 
+  <section id="collection" class="collection-section">
+    <div class="collection-card">
+      <div class="collection-left">
+        <div class="badge-top">¡Última Oportunidad!</div>
+
+        <h2 class="collection-title">¿Listo para Completar tu Colección K‑Pop?</h2>
+        <p class="collection-desc">
+          Únete a +15,000 fans que ya han construido su colección perfecta con álbumes auténticos de Corea del Sur.
+          Tu bias te está esperando.
+        </p>
+
+        <div class="promo-box" data-expire="">
+          <div class="promo-head">
+            <div class="promo-icon">🎵</div>
+            <div class="promo-text">OFERTA ESPECIAL TERMINA EN:</div>
+          </div>
+
+          <div class="countdown" aria-hidden="false">
+            <div class="count-item"><span class="count-num" data-unit="hours">00</span><small>Horas</small></div>
+            <div class="count-item"><span class="count-num" data-unit="minutes">00</span><small>Min</small></div>
+            <div class="count-item"><span class="count-num" data-unit="seconds">00</span><small>Seg</small></div>
+          </div>
+
+          <div class="promo-bottom">
+            <div class="promo-off"><strong>25% OFF</strong></div>
+            <div class="promo-extra">+ Photocards • Envío Gratis</div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li>Álbumes 100% Auténticos desde Corea</li>
+          <li>Photocards Exclusivas en Cada Pedido</li>
+          <li>Ediciones Limitadas y Especiales</li>
+          <li>Garantía de Satisfacción para Fans</li>
+        </ul>
+
+        <div class="cta-row">
+          <a href="#albums" class="btn-primary">Explorar Álbumes con 25% OFF</a>
+          <a href="#contact" class="btn-outline">Chat con Expertos K‑Pop</a>
+        </div>
+
+        <div class="meta-row">
+          <div class="rating">★ 4.9/5 • 8,547 reseñas • 15,000+ fans</div>
+        </div>
+      </div>
+
+      <div class="collection-right rounded-3xl border-gray-900" style={`background-image: url('${img2}')`}>
+        <div class="image-badge">+15K Fans</div>
+        <div class="image-seal">100% Auténtico</div>
+      </div>
+    </div>
+  </section>
+  
   <section id="footer" class="footer-section">  
-    <h2>Footer</h2>
-    <!-- contenido de footer -->
+      <footer id="footer" class="site-footer" style={`--footer-bg: url('${imgFooterBg}')`}>
+    <div class="footer-inner grid-footer">
+      <!-- column 1: brand + description + social -->
+      <div class="footer-col footer-brand">
+        <div class="brand-row">
+          <img src={imgLogo.src} alt="Gogushop logo" class="footer-logo" />
+          <div>
+            <h3 class="brand-name">Gogushop</h3>
+            <div class="brand-sub">Korea Style</div>
+          </div>
+        </div>
+       <p class="footer-desc">
+          Tu destino para productos auténticos de Corea del Sur.
+          Belleza, skincare, snacks y más con ese toque Aegyo que tanto amas.
+        </p>
+
+        <div class="socials ">
+          <a class="social-btn bg-gray-800" href="https://instragram.com" aria-label="Instagram" title="Instagram">
+         <svg  preserveAspectRatio="xMidYMid" viewBox="0 0 256 256" {...Astro.props}><path fill="#fff" d="M128 23.064c34.177 0 38.225.13 51.722.745 12.48.57 19.258 2.655 23.769 4.408 5.974 2.322 10.238 5.096 14.717 9.575 4.48 4.479 7.253 8.743 9.575 14.717 1.753 4.511 3.838 11.289 4.408 23.768.615 13.498.745 17.546.745 51.723 0 34.178-.13 38.226-.745 51.723-.57 12.48-2.655 19.257-4.408 23.768-2.322 5.974-5.096 10.239-9.575 14.718-4.479 4.479-8.743 7.253-14.717 9.574-4.511 1.753-11.289 3.839-23.769 4.408-13.495.616-17.543.746-51.722.746-34.18 0-38.228-.13-51.723-.746-12.48-.57-19.257-2.655-23.768-4.408-5.974-2.321-10.239-5.095-14.718-9.574-4.479-4.48-7.253-8.744-9.574-14.718-1.753-4.51-3.839-11.288-4.408-23.768-.616-13.497-.746-17.545-.746-51.723 0-34.177.13-38.225.746-51.722.57-12.48 2.655-19.258 4.408-23.769 2.321-5.974 5.095-10.238 9.574-14.717 4.48-4.48 8.744-7.253 14.718-9.575 4.51-1.753 11.288-3.838 23.768-4.408 13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95-8.418 3.271-15.556 7.648-22.672 14.764C14.367 28.6 9.991 35.738 6.72 44.155 3.555 52.297 1.392 61.602.77 75.226.147 88.878 0 93.237 0 128c0 34.763.147 39.122.77 52.774.622 13.625 2.785 22.93 5.95 31.071 3.27 8.417 7.647 15.556 14.763 22.672 7.116 7.116 14.254 11.492 22.672 14.763 8.142 3.165 17.446 5.328 31.07 5.95 13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95 8.418-3.27 15.556-7.647 22.672-14.763 7.116-7.116 11.493-14.254 14.764-22.672 3.164-8.142 5.328-17.446 5.95-31.07.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07-3.271-8.418-7.648-15.556-14.764-22.672C227.4 14.368 220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0Zm0 62.27C91.698 62.27 62.27 91.7 62.27 128c0 36.302 29.428 65.73 65.73 65.73 36.301 0 65.73-29.428 65.73-65.73 0-36.301-29.429-65.73-65.73-65.73Zm0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667Zm83.686-110.994c0 8.484-6.876 15.36-15.36 15.36-8.483 0-15.36-6.876-15.36-15.36 0-8.483 6.877-15.36 15.36-15.36 8.484 0 15.36 6.877 15.36 15.36Z"/></svg>
+          </a>
+          <a class="social-btn  bg-gray-800" href="#" aria-label="Facebook" title="Facebook">
+          <svg  viewBox="0 0 36 36" fill="url(#facebook__a)" {...Astro.props}><path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"/><path fill="#FFF" d="m25 23 .8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"/></svg>
+          </a>
+          <a class="social-btn  bg-gray-800" href="#" aria-label="Chat" title="Chat">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#g3)" stroke-width="1.6"/><path d="M8 9h8M8 12h5" stroke="url(#g3)" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <!-- column 2: enlaces rápidos -->
+      <div class="footer-col">
+        <h4 class="footer-title">Enlaces Rápidos</h4>
+        <nav class="footer-links-col" aria-label="Enlaces rápidos">
+          <a href="#inicio">Inicio</a>
+          <a href="#catalogo">Catálogo</a>
+          <a href="#about">Acerca de Nosotros</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+      </div>
+    <!-- column 3: categorias -->
+      <div class="footer-col">
+        <h4 class="footer-title">Categorías</h4>
+        <nav class="footer-links-col" aria-label="Categorías">
+          <a href="#kbeauty">K-Beauty & Skincare</a>
+          <a href="#makeup">Maquillaje Coreano</a>
+          <a href="#snacks">Snacks & Dulces</a>
+          <a href="#accesorios">Accesorios Fashion</a>
+        </nav>
+      </div>
+
+      <!-- column 4: contacto -->
+      <div class="footer-col footer-contact">
+        <h4 class="footer-title">Contacto</h4>
+
+   <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>
+            <div>Santiago de Surco</div>
+            <div class="muted">Lima - Peru</div>
+          </div>
+        </div> 
+
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9a2 2 0 0 0-1.5-1.9l-3-1a1 1 0 0 0-1 .2l-1.8 1.5a12 12 0 0 1-6.6-6.6l1.5-1.8a1 1 0 0 0 .2-1l-1-3A2 2 0 0 0 7.1 2H6a2 2 0 0 0-2 2c0 9.4 7.6 17 17 17a2 2 0 0 0 2-2v-1.1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div>(+51) 908 323 232</div>
+        </div>
+
+        <div class="contact-row">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <div><a href="mailto:hola@gogushop.com">hola@gogushop.com</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- divider -->
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <!-- info pills -->
+    <div class="footer-pills">
+      <div class="pill"><svg class="pill-icon" viewBox="0 0 24 24"><path d="M12 2l2 4 4 .6-3 2.8.7 4L12 13.5 8.3 14.4 9 10.5 6 7.6 10 7z" fill="currentColor"/></svg> Productos Auténticos</div>
+      <div class="pill"><svg class="pill-icon" viewBox="0 0 24 24"><path d="M12 21l-4-4h8l-4 4zM4 7h16v2H4z" fill="currentColor"/></svg> Envío Gratis + $50</div>
+      <div class="pill"><svg class="pill-icon" viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4 1.1 6.1L12 17.8 6.4 19 7.5 12 3 8l6-1z" fill="currentColor"/></svg> Garantía de Calidad</div>
+    </div>
+  </footer>
+
   </section>
 </main>
+
+<script>
+  (function () {
+    const track = document.querySelector('.carousel-track');
+    const slides = track ? Array.from(track.querySelectorAll('.carousel-slide')) : [];
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    let index = 0;
+    let interval: number | null = null;
+    const AUTOPLAY_MS = 4500;
+
+    function goTo(i: number) {
+      if (!track) return;
+      index = (i + slides.length) % slides.length;
+      (track as HTMLElement).style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === index);
+        d.setAttribute('aria-selected', idx === index ? 'true' : 'false');
+      });
+    }
+
+    function next() { goTo(index + 1); }
+    function prev() { goTo(index - 1); }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetAutoplay(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAutoplay(); });
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => { goTo(idx); resetAutoplay(); });
+    });
+
+    function startAutoplay() {
+      if (interval) clearInterval(interval);
+      interval = Number(setInterval(next, AUTOPLAY_MS));
+    }
+    function stopAutoplay() { if (interval) clearInterval(interval); interval = null; }
+    function resetAutoplay() { stopAutoplay(); startAutoplay(); }
+
+    const carouselEl = document.querySelector('.carousel');
+    if (carouselEl) {
+      carouselEl.addEventListener('mouseenter', stopAutoplay);
+      carouselEl.addEventListener('mouseleave', startAutoplay);
+      carouselEl.addEventListener('focusin', stopAutoplay);
+      carouselEl.addEventListener('focusout', startAutoplay);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { prev(); resetAutoplay(); }
+      if (e.key === 'ArrowRight') { next(); resetAutoplay(); }
+    });
+
+    goTo(0);
+    startAutoplay();
+  })();
+</script>
+
+<style is:inline>
+/* base carousel */
+.carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: #111;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 520ms cubic-bezier(.22,.9,.35,1);
+  will-change: transform;
+}
+.carousel-slide {
+  min-width: 100%;
+  min-height: 380px;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* overlay keeps readability but title uses image as fill */
+.slide-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+  color: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+}
+.slide-title {
+  font-size: 28px;
+  margin: 0 0 8px;
+  font-weight:700;
+  /* use same background as slide so text appears filled by image */
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.slide-sub { margin:0; opacity: .95; }
+
+/* buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+/* dots */
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.6);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.dot.active {
+  width: 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#7a6cff,#6ec6db);
+}
+
+/* responsive adjustments */
+@media (max-width: 720px) {
+  .carousel { max-width: 640px; margin: 12px auto; border-radius: 12px; }
+  .slide-overlay { padding: 18px; }
+  .slide-title { font-size: 20px; }
+  .carousel-btn { width:38px; height:38px; font-size:18px; }
+}
+
+/* desktop: full viewport */
+@media (min-width: 900px) {
+  .carousel {
+    max-width: none;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .carousel-track { height: 100%; }
+  .carousel-slide { min-height: 100vh; display:flex; }
+  .slide-overlay {
+    max-width: 50%;
+    padding: 40px;
+    border-radius: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+    align-self: center;
+    margin-left: 8%;
+    text-align: left;
+  }
+  .slide-title { font-size: 56px; line-height: 1.02; }
+  .slide-sub { font-size: 18px; }
+  .carousel-btn.prev { left: 28px; }
+  .carousel-btn.next { right: 28px; }
+  .dot { bottom: 28px; }
+}
+.site-footer {
+  --overlay: linear-gradient(180deg,#faf8fb,#fff);
+  background: var(--overlay);
+  border-top: 1px solid rgba(0,0,0,0.04);
+  color: #222;
+  padding: 48px 22px 36px;
+  position: relative;
+  overflow: hidden;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* faint decorative background image */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  right: -6%;
+  bottom: -6%;
+  width: 60%;
+  height: 60%;
+  background-image: var(--footer-bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  pointer-events: none;
+  transform: rotate(-6deg);
+}
+
+/* grid layout */
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* brand column */
+.brand-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.footer-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+}
+.brand-name { font-size: 20px; font-weight: 800; margin: 0; color: #6b6b6b; }
+.brand-sub { font-size: 13px; color: #9aa0a8; margin-top: -4px; }
+
+/* description */
+.footer-desc {
+  margin: 18px 0 14px;
+  color: #6f6f72;
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+/* socials */
+.socials { display:flex; gap:12px;  }
+.social-btn {
+  display:inline-grid; place-items:center;
+  width:48px; height:48px; border-radius:12px;
+  background:transparent; border:1px solid rgba(120,80,220,0.08);
+  box-shadow: inset 0 -6px 12px rgba(0,0,0,0.02);
+  color: #7a6cff;
+
+}
+.social-btn svg { display:block; }
+
+/* footer column titles and links */
+.footer-title { font-size: 18px; margin: 2px 0 12px; font-weight:700; color:#222; }
+.footer-links-col { display:flex; flex-direction:column; gap:12px; }
+.footer-links-col a {
+  color:#7a7a7a; text-decoration:none; font-size:15px;
+}
+.footer-links-col a:hover { color:#6c63ff; }
+
+/* contact rows */
+.footer-contact .contact-row { display:flex; gap:12px; align-items:center; margin-bottom:12px; color:#5e5e66; }
+.footer-contact .contact-row .muted { font-size:13px; color:#9b9b9b; margin-top:2px; }
+.footer-contact .icon { width:26px; height:26px; color:#7a6cff; flex-shrink:0; }
+
+/* divider */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(118,101,255,0.06), rgba(118,101,255,0.02));
+  margin: 22px auto;
+  width: 92%;
+  max-width: 1200px;
+  opacity: 0.9;
+}
+
+/* pills */
+.footer-pills {
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  margin-top:18px;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom:6px;
+}
+.pill {
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  background: linear-gradient(90deg, rgba(122,108,255,0.12), rgba(110,198,219,0.06));
+  padding: 12px 20px;
+  font-weight:700;
+  color:#6b6b6b;
+  border-radius:28px;
+  box-shadow: 0 8px 22px rgba(118,101,255,0.06);
+}
+.pill:nth-child(2) {
+  background: linear-gradient(90deg, rgba(255,200,210,0.15), rgba(255,180,190,0.04));
+  color:#d54c73;
+}
+.pill:nth-child(3) {
+  background: linear-gradient(90deg, rgba(170,240,255,0.12), rgba(200,240,255,0.04));
+  color:#16a6b6;
+}
+.pill .pill-icon { width:18px; height:18px; opacity:0.95; }
+
+/* responsive */
+@media (max-width: 980px) {
+  .footer-inner { grid-template-columns: 1fr; gap:18px; }
+  .footer-desc { max-width: none; }
+  .footer-legal { text-align: left; }
+  .footer-pills { flex-wrap:wrap; gap:12px; }
+  .site-footer::before { display:none; }
+}
+.collection-section { padding: 48px 18px; background: transparent; }
+.collection-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  background: linear-gradient(180deg, rgba(250,246,251,0.9), rgba(255,255,255,0.95));
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(120,60,180,0.06);
+  overflow: hidden;
+}
+
+/* left */
+.collection-left { padding: 38px; display:flex; flex-direction:column; gap:16px; }
+.badge-top {
+  display:inline-block;
+  background: linear-gradient(90deg,#6ec6db,#7a6cff);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:13px;
+  width:fit-content;
+}
+.collection-title {
+  font-size:28px;
+  color:#7a4fae;
+  margin: 6px 0 0;
+  line-height:1.05;
+}
+.collection-desc { color:#6b6b6b; margin:8px 0 18px; max-width:520px; }
+
+/* promo box */
+.promo-box {
+  background: #fff;
+  border-radius:12px;
+  padding:18px;
+  border:1px solid rgba(122,108,255,0.06);
+  max-width:520px;
+  box-shadow: 0 8px 18px rgba(118,101,255,0.04);
+}
+.promo-head { display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+.promo-icon { width:36px; height:36px; display:grid; place-items:center; background: linear-gradient(90deg,#7a6cff,#6ec6db); color:#fff; border-radius:8px; font-weight:700; }
+.promo-text { color:#6b6b6b; font-weight:700; font-size:13px; }
+
+/* countdown */
+.countdown { display:flex; gap:12px; margin:10px 0; }
+.count-item { background: linear-gradient(180deg,#f6f4ff,#fff); padding:10px 12px; border-radius:10px; min-width:64px; text-align:center; box-shadow: inset 0 -6px 12px rgba(118,101,255,0.02); }
+.count-num { font-weight:800; display:block; font-size:18px; color:#6c63ff; }
+.count-item small { display:block; font-size:12px; color:#7a7a7a; margin-top:6px; }
+
+/* promo bottom */
+.promo-bottom { display:flex; gap:12px; align-items:center; margin-top:8px; }
+.promo-off { font-size:18px; color:#7a6cff; font-weight:800; }
+.promo-extra { color:#7a7a7a; font-size:13px; }
+
+/* features */
+.features-list { margin:12px 0 16px; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px; color:#555; }
+.features-list li::before { content: "✓"; color:#7a6cff; margin-right:10px; font-weight:700; }
+
+/* ctas */
+.cta-row { display:flex; gap:12px; margin-top:6px; align-items:center; }
+.btn-primary {
+  display:inline-block;
+  background: linear-gradient(90deg,#7a6cff,#6ec6db);
+  color:#fff; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:800;
+  box-shadow: 0 10px 28px rgba(122,108,255,0.12);
+}
+.btn-outline { display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid rgba(122,108,255,0.12); color:#6b6b6b; text-decoration:none; font-weight:700; }
+
+/* meta */
+.meta-row { margin-top:auto; color:#6b6b6b; font-weight:700; }
+
+/* right image */
+.collection-right {
+  background-size: cover;
+  background-position: center;
+  min-height: 420px;
+  position: relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  padding: 16px;
+}
+.image-badge {
+  position:absolute;
+  top:18px;
+  right:18px;
+  background:#fff;
+  padding:8px 12px;
+  border-radius:12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  font-weight:700;
+  color:#6c63ff;
+}
+.image-seal {
+  background: #fff;
+  padding:8px 12px;
+  border-radius:12px;
+  margin: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  font-weight:700;
+  color:#6c63ff;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .collection-card { grid-template-columns: 1fr; }
+  .collection-right { min-height: 300px; }
+  .collection-left { padding:22px; }
+  .collection-title { font-size:22px; }
+}
+</style>
 
