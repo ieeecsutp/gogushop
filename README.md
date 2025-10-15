@@ -1,4 +1,3 @@
-<!-- 🎵 GOGUSHOP MUSIC — LANDING PAGE -->
 ![Uploading image.png…]()
 
 
