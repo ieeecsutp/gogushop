@@ -1,9 +1,11 @@
 ---
+
 ---
+
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a class="brand" href="#inicio">
-      <span class="brand-icon" aria-hidden="true"></span>
+      <img src="/favicon.svg" alt="Gogushop logo" class="brand-icon" />
       <div class="brand-text">
         <span class="brand-title">Gogushop <strong>Music</strong></span>
         <span class="brand-sub">K-Pop Store</span>
@@ -11,7 +13,9 @@
     </a>
 
     <ul class="nav-links" role="menubar">
-      <li role="none"><a role="menuitem" href="#inicio" class="active">Inicio</a></li>
+      <li role="none">
+        <a role="menuitem" href="#inicio" class="active">Inicio</a>
+      </li>
       <li role="none"><a role="menuitem" href="#albums">Álbumes</a></li>
       <li role="none"><a role="menuitem" href="#fans">Fans</a></li>
       <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
@@ -19,12 +23,37 @@
 
     <div class="nav-actions">
       <button class="cart" aria-label="Carrito">
-        <span class="cart-icon" aria-hidden="true"></span>
+        <span class="cart-icon" aria-hidden="true">💿</span>
         <span class="badge">0</span>
       </button>
 
       <button class="menu-toggle" aria-label="Abrir menú" type="button">
-        <span></span><span></span><span></span>
+        <svg
+          class="menu-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="26"
+          height="26"
+        >
+          <path
+            class="line top"
+            d="M4 7h16"
+            stroke="#7a6cff"
+            stroke-width="2.2"
+            stroke-linecap="round"></path>
+          <path
+            class="line middle"
+            d="M4 12h16"
+            stroke="#7a6cff"
+            stroke-width="2.2"
+            stroke-linecap="round"></path>
+          <path
+            class="line bottom"
+            d="M4 17h16"
+            stroke="#7a6cff"
+            stroke-width="2.2"
+            stroke-linecap="round"></path>
+        </svg>
       </button>
     </div>
   </div>
@@ -39,42 +68,47 @@
   </div>
 
   <script>
-    (function(){
-      const nav = document.querySelector('.site-nav');
-      const toggle = nav?.querySelector('.menu-toggle');
-      const overlay = nav?.querySelector('.mobile-overlay');
+    (function () {
+      const nav = document.querySelector(".site-nav");
+      const toggle = nav?.querySelector(".menu-toggle");
+      const overlay = nav?.querySelector(".mobile-overlay");
       const anchorLinks = nav?.querySelectorAll('a[href^="#"]') || [];
 
       if (!nav || !toggle || !overlay) return;
 
-      toggle.addEventListener('click', () => {
-        nav.classList.toggle('open');
-        overlay.setAttribute('aria-hidden', nav.classList.contains('open') ? 'false' : 'true');
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("open");
+        overlay.setAttribute(
+          "aria-hidden",
+          nav.classList.contains("open") ? "false" : "true",
+        );
       });
 
       // Smooth scroll behavior for in-page sections. If the section is not on current page,
       // navigate to root + hash so server will land user on index with hash.
-      anchorLinks.forEach(a => {
-        a.addEventListener('click', (e) => {
-          const href = a.getAttribute('href');
-          if (!href || !href.startsWith('#')) return;
+      anchorLinks.forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const href = a.getAttribute("href");
+          if (!href || !href.startsWith("#")) return;
           e.preventDefault();
           const id = href.slice(1);
           const target = document.getElementById(id);
 
           // close mobile menu
-          nav.classList.remove('open');
-          overlay.setAttribute('aria-hidden', 'true');
+          nav.classList.remove("open");
+          overlay.setAttribute("aria-hidden", "true");
 
           if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
             // update URL without reloading
-            history.replaceState(null, '', '#' + id);
+            history.replaceState(null, "", "#" + id);
           } else {
             // if not on root, navigate to root + hash to let index handle it
-            const isRoot = location.pathname === '/' || /index(\.html)?$/.test(location.pathname);
+            const isRoot =
+              location.pathname === "/" ||
+              /index(\.html)?$/.test(location.pathname);
             if (!isRoot) {
-              location.href = '/' + href;
+              location.href = "/" + href;
             } else {
               // fallback: set hash
               location.hash = href;
@@ -85,164 +119,324 @@
 
       // close overlay when a mobile link (anchor) is clicked (already handled above),
       // also close when clicking outside overlay on mobile
-      document.addEventListener('click', (ev) => {
-        if (!nav.classList.contains('open')) return;
+      document.addEventListener("click", (ev) => {
+        if (!nav.classList.contains("open")) return;
         const within = ev.target && nav.contains(ev.target as Node);
         if (!within) {
-          nav.classList.remove('open');
-          overlay.setAttribute('aria-hidden', 'true');
+          nav.classList.remove("open");
+          overlay.setAttribute("aria-hidden", "true");
         }
       });
     })();
+    // Detectar la sección visible y marcar el enlace activo
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    function activateLinkOnScroll() {
+      let current = "";
+      sections.forEach((section) => {
+        const el = section as HTMLElement;
+        const sectionTop = el.offsetTop - 120;
+        const sectionHeight = el.clientHeight;
+        if (
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
+        ) {
+          current = el.getAttribute("id") || "";
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", activateLinkOnScroll);
   </script>
 
-<style is:inline>
+  <style is:inline>
+    .site-nav {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(250, 246, 246, 0.95)
+      );
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+      padding: 10px 18px;
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial;
+      backdrop-filter: blur(8px);
+    }
 
-.site-nav {
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,246,246,0.95));
-  position: sticky;
-  top: 0;
-  z-index: 60;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
-  padding: 10px 18px;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      justify-content: space-between;
+    }
 
-.nav-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  justify-content: space-between;
-}
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      text-decoration: none;
+      color: #222;
+    }
+    .brand-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at 30% 30%,
+        #ff8fb0,
+        #6cc0ff 60%,
+        #b28cff 100%
+      );
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(120, 0, 180, 0.08);
+      flex-shrink: 0;
+      position: relative;
+      border: 3px solid rgba(255, 255, 255, 0.5);
+    }
+    .brand-text {
+      line-height: 1;
+    }
+    .brand-title {
+      font-size: 22px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #b57cff, #6ec6db);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+    }
+    .brand-title strong {
+      font-weight: 800;
+    }
+    .brand-sub {
+      display: block;
+      font-size: 12px;
+      color: #8b8b8b;
+    }
 
-.brand {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  text-decoration: none;
-  color: #222;
-}
-.brand-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ff8fb0, #6cc0ff 60%, #b28cff 100%);
-  display: inline-block;
-  box-shadow: 0 2px 6px rgba(120,0,180,0.08);
-  flex-shrink: 0;
-  position: relative;
-  border: 3px solid rgba(255,255,255,0.5);
-}
-.brand-text { line-height: 1; }
-.brand-title {
-  font-size: 22px;
-  font-weight: 700;
-  background: linear-gradient(90deg,#b57cff,#6ec6db);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: block;
-}
-.brand-title strong { font-weight: 800; }
-.brand-sub { display:block; font-size: 12px; color:#8b8b8b; }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: #222;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-.nav-links {
-  display: flex;
-  gap: 40px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.nav-links a {
-  color: #222;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 8px 0;
-  transition: color .18s ease;
-}
-.nav-links a.active { color: #6c63ff; position: relative; }
-.nav-links a.active::after {
-  content: "";
-  display:block;
-  height:4px;
-  width:28px;
-  background:#7a6cff;
-  border-radius:8px;
-  margin-top:6px;
-}
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #b57cff, #6ec6db);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
 
-.nav-actions { display:flex; gap:12px; align-items:center; }
-.cart {
-  position: relative;
-  background: transparent;
-  border: 1px solid rgba(120,80,220,0.25);
-  padding: 10px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-.cart-icon {
-  width: 22px;
-  height: 22px;
-  display:inline-block;
-  background: conic-gradient(#fff,#ddd);
-  border-radius: 50%;
-  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.06);
-}
-.badge {
-  position: absolute;
-  right: -6px;
-  top: -6px;
-  background: #39c6ff;
-  color: #fff;
-  font-size: 12px;
-  padding: 3px 6px;
-  border-radius: 12px;
-  border: 2px solid white;
-}
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-.menu-toggle {
-  display: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid rgba(120,80,220,0.12);
-  gap:6px;
-  padding:8px;
-  align-items:center;
-  justify-content:center;
-}
-.menu-toggle span {
-  display:block;
-  height:2px;
-  background:#7a6cff;
-  width:18px;
-  margin:3px 0;
-}
+    .nav-links a.active::after {
+      width: 100%;
+    }
 
-.mobile-overlay {
-  display: none;
-  position: fixed;
-  top: 70px;
-  left: 12px;
-  right: 12px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  padding: 18px;
-}
-.mobile-links { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
-.mobile-links a { text-decoration:none; font-size:18px; color:#222; }
+    .nav-links a.active {
+      color: #6c63ff;
+    }
 
-@media (max-width: 900px) {
-  .nav-links { display: none; }
-  .menu-toggle { display: inline-flex; }
-  .brand-icon { width:48px; height:48px; }
-  .nav-inner { gap:12px; }
-  .mobile-overlay { display: none; }
-  .site-nav.open .mobile-overlay { display: block; }
-}
-</style>
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .cart {
+      position: relative;
+      background: transparent;
+      border: 1px solid rgba(120, 80, 220, 0.25);
+      padding: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+
+    .cart:hover {
+      border-color: rgba(120, 80, 220, 0.5);
+    }
+
+    .badge {
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      background: #39c6ff;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 12px;
+      border: 2px solid white;
+    }
+
+    .cart-icon {
+      font-size: 22px;
+      display: inline-block;
+      transition:
+        transform 0.4s ease,
+        filter 0.3s ease;
+    }
+
+    .cart:hover .cart-icon {
+      transform: rotate(360deg) scale(1.1);
+      filter: drop-shadow(0 0 5px rgba(122, 108, 255, 0.5));
+    }
+
+    .badge {
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      background: #39c6ff;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 12px;
+      border: 2px solid white;
+    }
+    /* --- Botón hamburguesa base --- */
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid rgba(120, 80, 220, 0.12);
+      background: transparent;
+      cursor: pointer;
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .menu-toggle:hover {
+      background: rgba(180, 150, 255, 0.08);
+      border-color: rgba(120, 80, 220, 0.3);
+    }
+
+    .menu-icon {
+      width: 26px;
+      height: 26px;
+      transition: transform 0.3s ease;
+    }
+
+    .line {
+      transition:
+        transform 0.3s ease,
+        stroke 0.3s ease,
+        opacity 0.3s ease;
+      transform-origin: center;
+      stroke: #7a6cff;
+    }
+
+    /* --- Hover sutil y limpio --- */
+    .menu-toggle:hover .line {
+      stroke: #b57cff;
+    }
+
+    .menu-toggle:hover .line.top {
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle:hover .line.bottom {
+      transform: translateY(1px);
+    }
+
+    /* --- Animación al abrir menú (hamburguesa → X) --- */
+    .site-nav.open .menu-icon .top {
+      transform: rotate(45deg) translateY(5px);
+    }
+
+    .site-nav.open .menu-icon .middle {
+      opacity: 0;
+    }
+
+    .site-nav.open .menu-icon .bottom {
+      transform: rotate(-45deg) translateY(-5px);
+    }
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 12px;
+      right: 12px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      padding: 18px;
+    }
+    .mobile-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mobile-links a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #222;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-toggle {
+        display: inline-flex;
+      }
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+      }
+      .nav-inner {
+        gap: 12px;
+      }
+      .mobile-overlay {
+        display: none;
+      }
+      .site-nav.open .mobile-overlay {
+        display: block;
+      }
+    }
+  </style>
 </nav>
