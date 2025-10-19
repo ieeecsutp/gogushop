@@ -199,7 +199,7 @@ import Faq from "../pages/faq.astro";
 Estudiante de Ingenieria de Sistemas e Informática
 
 👨‍💻 Adrian Enrique
-Estudiante de Ingenieria de Sistemas e Informática
+Estudiante de Ingenieria de Sosftware
 
 👨‍💻 Oscar Antonio
 Estudiante de Ingenieria de Sistemas e Informática
