@@ -2,54 +2,78 @@
 // FinalCTA.astro
 
 const benefits = [
-  { icon: 'check-circle', text: 'Álbumes 100% Auténticos desde Corea' },
-  { icon: 'music', text: 'Photocards Exclusivas en Cada Pedido' },
-  { icon: 'disc', text: 'Ediciones Limitadas y Especiales' },
-  { icon: 'heart', text: 'Garantía de Satisfacción para Fans' }
+  { icon: "check-circle", text: "Álbumes 100% Auténticos desde Corea" },
+  { icon: "music", text: "Photocards Exclusivas en Cada Pedido" },
+  { icon: "disc", text: "Ediciones Limitadas y Especiales" },
+  { icon: "heart", text: "Garantía de Satisfacción para Fans" },
 ];
 
 const urgencyReasons = [
-  '⏰ Oferta válida solo por 48 horas',
-  '📀 Stock limitado en ediciones especiales',
-  '🎁 Photocards gratis solo mientras tengamos inventario',
-  '💝 25% de descuento adicional termina pronto'
+  "⏰ Oferta válida solo por 48 horas",
+  "📀 Stock limitado en ediciones especiales",
+  "🎁 Photocards gratis solo mientras tengamos inventario",
+  "💝 25% de descuento adicional termina pronto",
 ];
 
 const icons = {
-  'check-circle': '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>',
-  'music': '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
-  'disc': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>',
-  'heart': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
-  'timer': '<path d="M10 2h4"/><path d="M12 14v-4"/><path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6"/><path d="M9 17H2v7"/>',
-  'play': '<polygon points="6 3 20 12 6 21 6 3"/>',
-  'star': '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
-  'headphones': '<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>'
+  "check-circle":
+    '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>',
+  music:
+    '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  disc: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>',
+  heart:
+    '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+  timer:
+    '<path d="M10 2h4"/><path d="M12 14v-4"/><path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6"/><path d="M9 17H2v7"/>',
+  play: '<polygon points="6 3 20 12 6 21 6 3"/>',
+  star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  headphones:
+    '<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/>',
 };
 ---
 
 <section class="py-20 bg-gradient-to-b from-muted/30 to-primary/5">
   <div class="container mx-auto px-4">
     <!-- Main CTA Card -->
-    <div class="card-cta max-w-6xl mx-auto bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border-2 border-primary/20 shadow-2xl overflow-hidden rounded-xl">
+    <div
+      class="card-cta max-w-6xl mx-auto bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border-2 border-primary/20 shadow-2xl overflow-hidden rounded-xl"
+    >
       <div class="grid lg:grid-cols-2 gap-0">
         <!-- Content Side -->
         <div class="p-8 lg:p-12">
-          <div class="badge-cta bg-gradient-to-r from-primary to-accent text-white px-4 py-2 mb-6 inline-flex items-center rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+          <div
+            class="badge-cta bg-gradient-to-r from-primary to-accent text-white px-4 py-2 mb-6 inline-flex items-center rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="mr-2"
+            >
               <Fragment set:html={icons.timer} />
             </svg>
             ¡Última Oportunidad!
           </div>
-          
+
           <h2 class="text-3xl lg:text-4xl font-bold mb-6">
-            <span class="bg-gradient-to-r from-orange-500 via-fuchsia-500 to-yellow-300 bg-clip-text text-transparent">
+            <span
+              class="bg-gradient-to-r from-orange-500 via-fuchsia-500 to-yellow-300 bg-clip-text text-transparent"
+            >
               ¿Listo para Completar tu Colección K-Pop?
             </span>
           </h2>
-          
+
           <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Únete a los +15,000 fans que ya han construido su colección perfecta con álbumes 
-            auténticos de Corea del Sur. <span class="font-bold text-primary">Tu bias te está esperando.</span>
+            Únete a los +15,000 fans que ya han construido su colección perfecta
+            con álbumes auténticos de Corea del Sur. <span
+              class="font-bold text-primary">Tu bias te está esperando.</span
+            >
           </p>
 
           <!-- Special Offer Box -->
@@ -58,26 +82,41 @@ const icons = {
               <h3 class="text-xl font-bold text-primary mb-2">
                 🎵 OFERTA ESPECIAL TERMINA EN:
               </h3>
-              
+
               <div class="flex justify-center space-x-4 mb-4">
                 <div class="text-center">
-                  <div class="bg-primary text-white rounded-lg px-3 py-2 font-bold text-lg">23</div>
+                  <div
+                    class="bg-primary text-white rounded-lg px-3 py-2 font-bold text-lg"
+                  >
+                    23
+                  </div>
                   <p class="text-xs text-muted-foreground mt-1">Horas</p>
                 </div>
                 <div class="text-center">
-                  <div class="bg-secondary text-white rounded-lg px-3 py-2 font-bold text-lg">45</div>
+                  <div
+                    class="bg-secondary text-white rounded-lg px-3 py-2 font-bold text-lg"
+                  >
+                    45
+                  </div>
                   <p class="text-xs text-muted-foreground mt-1">Min</p>
                 </div>
                 <div class="text-center">
-                  <div class="bg-accent text-white rounded-lg px-3 py-2 font-bold text-lg">12</div>
+                  <div
+                    class="bg-accent text-white rounded-lg px-3 py-2 font-bold text-lg"
+                  >
+                    12
+                  </div>
                   <p class="text-xs text-muted-foreground mt-1">Seg</p>
                 </div>
               </div>
-              
+
               <p class="text-sm text-muted-foreground mb-3">
-                Código: <span class="font-bold text-primary bg-primary/10 px-2 py-1 rounded">KPOP25</span>
+                Código: <span
+                  class="font-bold text-primary bg-primary/10 px-2 py-1 rounded"
+                  >KPOP25</span
+                >
               </p>
-              
+
               <div class="flex items-center justify-center space-x-4 text-sm">
                 <span class="text-2xl font-bold text-primary">25% OFF</span>
                 <span class="text-muted-foreground">+</span>
@@ -90,37 +129,76 @@ const icons = {
 
           <!-- Benefits List -->
           <div class="space-y-3 mb-8">
-            {benefits.map((benefit) => (
-              <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-                    <Fragment set:html={icons[benefit.icon]} />
-                  </svg>
+            {
+              benefits.map((benefit) => (
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="text-white"
+                    >
+                      <Fragment
+                        set:html={icons[benefit.icon as keyof typeof icons]}
+                      />
+                    </svg>
+                  </div>
+                  <span class="text-foreground font-medium">
+                    {benefit.text}
+                  </span>
                 </div>
-                <span class="text-foreground font-medium">{benefit.text}</span>
-              </div>
-            ))}
+              ))
+            }
           </div>
 
           <!-- CTA Buttons -->
           <div class="space-y-4">
-            <button 
+            <button
               class="btn-primary w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mr-3"
+              >
                 <Fragment set:html={icons.play} />
               </svg>
               Explorar Álbumes con 25% OFF
             </button>
-            
+
             <div class="text-center">
               <p class="text-sm text-muted-foreground mb-2">
                 ¿Buscas un álbum específico? Chatea con nuestros expertos K-Pop
               </p>
-              <button 
+              <button
                 class="btn-secondary border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-xl transition-all duration-300 px-4 py-2 inline-flex items-center"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="mr-2"
+                >
                   <Fragment set:html={icons.headphones} />
                 </svg>
                 💬 Chat con Expertos K-Pop
@@ -132,7 +210,18 @@ const icons = {
           <div class="mt-8 pt-6 border-t border-primary/20">
             <div class="flex items-center justify-center space-x-4 text-sm">
               <div class="flex items-center space-x-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-secondary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-secondary"
+                >
                   <Fragment set:html={icons.star} />
                 </svg>
                 <span class="font-bold">4.9/5</span>
@@ -153,24 +242,53 @@ const icons = {
             class="w-full h-full object-cover min-h-96"
             loading="lazy"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-secondary/20"></div>
-          
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-secondary/20"
+          >
+          </div>
+
           <!-- Floating Elements -->
           <div class="absolute top-6 right-6 bg-white rounded-xl p-3 shadow-lg">
             <div class="flex items-center space-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-primary"
+              >
                 <Fragment set:html={icons.heart} />
               </svg>
               <span class="text-sm font-bold text-foreground">+15K Fans</span>
             </div>
           </div>
-          
-          <div class="absolute bottom-6 left-6 bg-white rounded-xl p-3 shadow-lg">
+
+          <div
+            class="absolute bottom-6 left-6 bg-white rounded-xl p-3 shadow-lg"
+          >
             <div class="flex items-center space-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-secondary"
+              >
                 <Fragment set:html={icons.music} />
               </svg>
-              <span class="text-sm font-bold text-foreground">100% Auténtico</span>
+              <span class="text-sm font-bold text-foreground"
+                >100% Auténtico</span
+              >
             </div>
           </div>
         </div>
@@ -182,24 +300,27 @@ const icons = {
       <h3 class="text-2xl font-bold text-center text-primary mb-8">
         ¿Por Qué Actuar Ahora?
       </h3>
-      
+
       <div class="grid md:grid-cols-2 gap-4">
-        {urgencyReasons.map((reason) => (
-          <div 
-            class="bg-white rounded-xl p-4 border-2 border-primary/10 hover:border-primary/20 transition-all duration-300"
-          >
-            <p class="text-foreground font-medium">{reason}</p>
-          </div>
-        ))}
+        {
+          urgencyReasons.map((reason) => (
+            <div class="bg-white rounded-xl p-4 border-2 border-primary/10 hover:border-primary/20 transition-all duration-300">
+              <p class="text-foreground font-medium">{reason}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <!-- Final Trust Statement -->
     <div class="mt-12 text-center">
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-        <span class="font-bold text-primary">Garantía de autenticidad:</span> Todos nuestros álbumes 
-        son importados directamente desde Corea del Sur. Si no estás 100% satisfecho, 
-        <span class="font-bold text-secondary"> te devolvemos tu dinero sin preguntas.</span>
+        <span class="font-bold text-primary">Garantía de autenticidad:</span> Todos
+        nuestros álbumes son importados directamente desde Corea del Sur. Si no estás
+        100% satisfecho,
+        <span class="font-bold text-secondary">
+          te devolvemos tu dinero sin preguntas.</span
+        >
       </p>
     </div>
   </div>
@@ -308,9 +429,10 @@ const icons = {
 
   /* Card styles */
   .card-cta {
-    background: linear-gradient(to right, 
-      rgba(102, 126, 234, 0.1), 
-      rgba(118, 75, 162, 0.1), 
+    background: linear-gradient(
+      to right,
+      rgba(102, 126, 234, 0.1),
+      rgba(118, 75, 162, 0.1),
       rgba(240, 147, 251, 0.1)
     );
   }
@@ -328,11 +450,15 @@ const icons = {
   }
 
   .shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .shadow-xl {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
 
   /* Animation utilities */

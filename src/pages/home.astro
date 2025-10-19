@@ -295,7 +295,7 @@ const slides = [
             {
               [...Array(5)].map((_, i) => (
                 <svg
-                  key={i}
+                  data-key={i}
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
@@ -390,7 +390,7 @@ const slides = [
   let currentSlide = 0;
   let isAutoPlaying = true;
   let isAudioPlaying = false;
-  let autoPlayInterval: number;
+  let autoPlayInterval: ReturnType<typeof setInterval>;
 
   // Elements
   const slideBackgrounds = document.querySelectorAll(".slide-bg");
