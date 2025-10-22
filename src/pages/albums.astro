@@ -1,5 +1,6 @@
 ---
 // FeaturedProducts.astro
+import Card from "../components/Card.astro";
 
 const featuredAlbums = [
   {
@@ -92,7 +93,7 @@ const featuredAlbums = [
 <section class="py-20 bg-gradient-to-b from-background to-muted/30">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <div class="badge-featured bg-gradient-to-r from-primary to-accent text-white px-4 py-2 mb-4 inline-flex items-center rounded-es-sm">
+      <div class="flex items-center bg-gradient-to-r from-[#7b30fc] to-[#17aed4] text-white font-semibold text-sm py-2 px-5 rounded-lg shadow-sm px-4 py-2 mb-4 inline-flex items-center rounded-es-sm">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
           <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
         </svg>
@@ -278,7 +279,131 @@ const featuredAlbums = [
 </div>
   </div>
 </section>
+<section>
+    <div class="text-center text-gray-900 mt-50 mb-32">
+        <!-- Sección: Experiencia Kpop -->
+        <div
+            class="flex flex-col items-center justify-center text-center text-gray-900"
+        >
+            <div class="flex items-center justify-center mb-4">
+                <button
+                    class="flex items-center bg-gradient-to-r from-[#7b30fc] to-[#17aed4] text-white font-semibold text-sm py-2 px-4 rounded-lg shadow-sm"
+                >
+                    <img
+                        src="/icons/checked.svg"
+                        class="w-4 h-4 brightness-0 invert mr-2"
+                    />
+                    <span>¿Por Qué Elegir Gogushop?</span>
+                </button>
+            </div>
+            <div class="text-4xl md:text-5xl font-bold">
+                <span
+                    class="bg-gradient-to-r from-[#b25ff5] to-[#e036b0] bg-clip-text text-transparent"
+                >
+                    La Experiencia
+                </span>
+                <span
+                    class="bg-gradient-to-r from-pink-500 to-[#e036b0] bg-clip-text text-transparent"
+                >
+                    K-Pop
+                </span>
 
+                <span
+                    class="bg-gradient-to-r from-[#e036b0] to-[#5396c9] bg-clip-text text-transparent"
+                >
+                    Definitiva
+                </span>
+            </div>
+            <p class="text-gray-600 mt-3 max-w-3xl mx-auto text-lg px-12">
+                Miles de fans ya confían en nosotros para su colección de
+                álbumes coreanos. Descubre por qué somos la tienda favorita de
+                los amantes del K-Pop.
+            </p>
+
+            <!-- Cards -->
+            <div
+                class="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3 max-w-8xl mx-auto px-[3vw] sm:px-[7vw] lg:px-[10vw]"
+            >
+                <Card
+                    image="/icons/shield.svg"
+                    title="Álbumes 100% Auténticos"
+                    description="Directamente desde Corea del Sur. Garantía de autenticidad en cada álbum oficial."
+                    gradient="bg-gradient-to-r from-[#7b30fc] to-[#6cc0ff]"
+                />
+
+                <Card
+                    image="/icons/truck.svg"
+                    title="Envío Gratis en Compras +$50"
+                    description="nvío gratuito y rápido a todo Perú. Recibe tus álbumes en 3-5 días hábiles."
+                    gradient="bg-gradient-to-r from-[#ed2dbd] to-[#17aed4]"
+                />
+
+                <Card
+                    image="/icons/gift.svg"
+                    title="Photocards Gratis en Cada Pedido"
+                    description="Descubre tu bias con photocards exclusivas incluidas en cada álbum."
+                    gradient="bg-gradient-to-r from-[#6cc0ff] to-[#7b30fc]"
+                />
+
+                <Card
+                    image="/icons/heart.svg"
+                    title="Asesoría Personalizada"
+                    description="Nuestro equipo de expertos K-Pop te ayuda a encontrar los álbumes perfectos."
+                    gradient="bg-gradient-to-r from-[#7b30fc] to-[#e600b0]"
+                />
+
+                <Card
+                    image="/icons/clock.svg"
+                    title="Devoluciones de 30 Días"
+                    description="Si no estás 100% satisfecho, devuelve tu álbum sin complicaciones."
+                    gradient="bg-gradient-to-r from-[#e600b0] to-[#7b30fc]"
+                />
+
+                <Card
+                    image="/icons/star.svg"
+                    title="Ediciones Especiales Garantizadas"
+                    description="Solo trabajamos con distribuidores oficiales de los mejores grupos K-Pop."
+                    gradient="bg-gradient-to-r from-[#17aed4] to-[#ed2dbd]"
+                />
+            </div>
+
+            <!-- Sección de reseñas, fans y experiencia -->
+            <div
+                class="flex flex-wrap items-center justify-center gap-6 mt-10 text-gray-700 text-sm"
+            >
+                <!-- Reseñas -->
+                <div class="flex items-center space-x-1">
+                    <span class="text-pink-500 text-xl">★★★★★</span>
+                    <span class="font-semibold text-gray-900">4.9/5</span>
+                    <span class="text-gray-500">(2,847 reseñas)</span>
+                </div>
+
+                <!-- Fans -->
+                <div class="flex items-center space-x-2">
+                    <img
+                        src="/icons/heart.svg"
+                        class="w-4 h-4 stroke-[#b57cff]"
+                    />
+                    <span class="text-[#b57cff] font-medium"
+                        >+15,000 fans satisfechos</span
+                    >
+                </div>
+
+                <!-- Años -->
+                <div class="flex items-center space-x-2">
+                    <img
+                        src="/icons/sparkle.svg"
+                        class="w-4 h-4"
+                        style="filter: brightness(0) saturate(100%) invert(60%) sepia(43%) saturate(1000%) hue-rotate(160deg) brightness(95%) contrast(90%);"
+                    />
+                    <span class="text-[#17aed4] font-medium"
+                        >3 años en el mercado</span
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <script>
   // State management
   let favorites: number[] = [];
