@@ -4,20 +4,18 @@ import "../styles/global.css";
 import Albums from "../pages/albums.astro";
 import Fans from "../pages/fans.astro";
 import Faq from "../pages/faq.astro";
-import Home from "../pages/home.astro"
+import Home from "../pages/home.astro";
 import Footer from "../pages/footer.astro";
-import Ofert from "../pages/ofert.astro"
+import Ofert from "../pages/ofert.astro";
 ---
 
 <div class="text-center text-gray-900">
   <Navbar />
 </div>
 
-<main>
+<main style="padding-top: 40px;">
   <section id="inicio" class="hero">
-
-<Home />
-
+    <Home />
   </section>
 
   <!-- Sección Álbumes -->
@@ -40,11 +38,9 @@ import Ofert from "../pages/ofert.astro"
     <Faq />
   </section>
 
-  <section id="contact" class="contact-section">
-    <h2>Contacto</h2>
-  </section>
+  <section id="contact" class="contact-section"></section>
   <section>
-  <Ofert />
+    <Ofert />
   </section>
 
   <section id="footer" class="footer-section">
