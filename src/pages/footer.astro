@@ -34,28 +34,31 @@ const colorText = '#5b21b6'; // Morado oscuro (Morado-700) para texto/títulos
   <div class="container mx-auto px-4 py-16 max-w-7xl justify-center items-center">
     
     {/* Simplified CTA Section - Centered and using soft colors */}
-    <div class="text-center mb-16">
-      <div class="max-w-xl mx-auto">
-        <h3 class="text-xl font-medium mb-3 text-gray-700">
-          ¿Listo para Completar tu Colección K-Pop?
-        </h3>
-        <p class="text-sm text-gray-500 mb-6">
-          Descubre por qué +15,000 fans confían en Gogushop Music para su colección de álbumes coreanos
-        </p>
-        
-        {/* Button style matching the image's gradient (soft purple/lavender) */}
-        <button
-          style={`background-image: linear-gradient(to right, ${colorLavender}, ${colorPurple});`}
-          class="inline-flex items-center justify-center text-white  px-6 py-2.5  rounded-lg transition-all duration-300 font-semibold shadow-md hover:opacity-90"
-        >
-          {/* ShoppingCart icon replaced with SVG */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 mr-2">
+ <div class="text-center mb-16">
+  <div class="max-w-xl mx-auto">
+    <h3
+      class=" font-bold mb-3 bg-clip-text text-indigo-500 text-2xl"
+    >
+      ¿Listo para Completar tu Colección K-Pop?
+    </h3>
+
+    <p class="text-base text-gray-700 mb-8 px-4 sm:px-0">
+      Descubre por qué +15,000 fans confían en Gogushop Music para su colección de álbumes coreanos
+    </p>
+
+    <button
+      class="inline-flex items-center justify-center text-white text-lg px-4 py-1 rounded-full transition-all duration-300 font-semibold shadow-xl hover:opacity-90"
+      style="background-image: linear-gradient(to right, #9b59b6, #5dade2, #48adc9);"
+    >
+       <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 mr-2">
+
             <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
           </svg>
-          Comprar Ahora con 25% OFF
-        </button>
-       </div>
-      </div>
+      Comprar Ahora con 25% OFF
+    </button>
+  </div>
+</div>
 
     {/* Main Footer Content - Adjusted column alignment */}
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 ">
@@ -80,41 +83,56 @@ const colorText = '#5b21b6'; // Morado oscuro (Morado-700) para texto/títulos
           Tu destino para álbumes auténticos de K-Pop directo desde Corea del Sur. 
           Colecciona los mejores grupos con photocards exclusivas y ediciones especiales.
         </p>
-        <div class="flex space-x-4">
-          {/* Social Icons adjusted to Lavender/Purple style - No outline, just fill color */}
-          {/* Instagram icon replaced with SVG */}
-          <button
-            class="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300"
-            aria-label="Instagram"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
-            </svg>
-          </button>
-          {/* Facebook icon replaced with SVG */}
-          <button
-            class="border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300"
-            aria-label="Facebook"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </button>
-          {/* MessageCircle icon replaced with SVG */}
-          <button
-            class="border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
-            aria-label="Message"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
-              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
-            </svg>
-          </button>
-        </div>
+       <div class="flex space-x-4 p-4" style="background-color: #f7f7ff;">
+  <button
+    class="flex items-center justify-center  w-8 h-8 rounded-xl bg-white border-1 transition-all duration-300 hover:scale-105"
+    style="
+      color: #8e44ad; 
+      border-color: #8e44ad; x
+      box-shadow: 0 0 0 1px #8e44ad; s
+    "
+    aria-label="Instagram"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
+    </svg>
+  </button>
+
+  <button
+    class="flex items-center justify-center  w-8 h-8 rounded-xl bg-white border-0 transition-all duration-300 hover:scale-105"
+    style="
+      color: #e84393;
+      border-color: #e84393;
+      box-shadow: 0 0 0 1px #e84393; 
+    "
+    aria-label="Facebook"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+  </button>
+
+  <button
+    class="flex items-center justify-center w-8 h-8 rounded-xl bg-white border-0 transition-all duration-300 hover:scale-105"
+    style="
+      color: #1abc9c; 
+      border-color: #1abc9c; 
+      box-shadow: 0 0 0 1px #1abc9c; 
+    "
+    aria-label="Message"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+    </svg>
+  </button>
+</div>
       </div>
 
       {/* Quick Links */}
       <div class="md:col-span-1">
-        <h4 style={`color: ${colorText};`} class="font-bold mb-4">Enlaces Rápidos</h4>
+        <h4 class="font-bold mb-4 ">Enlaces Rápidos</h4>
         <ul class="space-y-3">
           {quickLinks.map((link) => (
             <li>
@@ -131,7 +149,7 @@ const colorText = '#5b21b6'; // Morado oscuro (Morado-700) para texto/títulos
 
       {/* Categories */}
       <div class="md:col-span-1">
-        <h4 style={`color: ${colorText};`} class="font-bold mb-4">Categorías</h4>
+        <h4  class="font-bold mb-4">Categorías</h4>
         <ul class="space-y-3">
           {categories.map((category) => (
             <li>
@@ -148,7 +166,7 @@ const colorText = '#5b21b6'; // Morado oscuro (Morado-700) para texto/títulos
 
       {/* Contact Info */}
       <div class="md:col-span-1">
-        <h4 style={`color: ${colorText};`} class="font-bold mb-4">Contacto</h4>
+        <h4    class="font-bold mb-4">Contacto</h4>
         <div class="space-y-4">
           <div class="flex items-start space-x-3">
             {/* MapPin icon replaced with SVG */}

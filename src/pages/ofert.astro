@@ -62,11 +62,7 @@ const icons = {
           </div>
 
           <h2 class="text-3xl lg:text-4xl font-bold mb-6">
-            <span
-              class="bg-gradient-to-r from-orange-500 via-fuchsia-500 to-yellow-300 bg-clip-text text-transparent"
-            >
-              ¿Listo para Completar tu Colección K-Pop?
-            </span>
+            <span class="bg-gradient-to-r from-purple-500 via-red-400 to-blue-400 bg-clip-text text-transparent" > ¿Listo para Completar tu Colección K-Pop? </span>
           </h2>
 
           <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -132,7 +128,7 @@ const icons = {
             {
               benefits.map((benefit) => (
                 <div class="flex items-center space-x-3">
-                  <div class="w-8 h-8 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0">
+                  <div class="w-8 h-8 bg-gradient-to-r from-violet-600 via-blue-500 to-blue-300 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -143,7 +139,7 @@ const icons = {
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                      class="text-white"
+                      class="text-black "
                     >
                       <Fragment
                         set:html={icons[benefit.icon as keyof typeof icons]}
@@ -160,32 +156,31 @@ const icons = {
 
           <!-- CTA Buttons -->
           <div class="space-y-4">
-            <button
-              class="btn-primary w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="mr-3"
-              >
-                <Fragment set:html={icons.play} />
-              </svg>
-              Explorar Álbumes con 25% OFF
-            </button>
+           <button
+  class=" w-full flex items-center justify-center space-x-2 rounded-full px-6 py-2  text-lg font-semibold text-white shadow-lg transition duration-300 ease-in-out"
+  style="background-image: linear-gradient(to right, #a75bc8, #347cdb, #62ccb7);"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    class="h-6 w-6"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M4.5 5.653c0-1.427 1.529-2.31 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286l-11.54 6.347c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+      clip-rule="evenodd"
+    />
+  </svg>
+  <span>Explorar Álbumes con 25% OFF</span>
+</button>
 
-            <div class="text-center">
-              <p class="text-sm text-muted-foreground mb-2">
+            <div class="text-center ">
+              <p class="text-sm text-muted-foreground mb-2  ">
                 ¿Buscas un álbum específico? Chatea con nuestros expertos K-Pop
               </p>
               <button
-                class="btn-secondary border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-xl transition-all duration-300 px-4 py-2 inline-flex items-center"
+                class="btn-secondary border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-xl transition-all duration-300 px-4 py-2 inline-flex items-center m-1 mx-auto"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
