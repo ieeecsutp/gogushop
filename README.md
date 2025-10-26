@@ -1,30 +1,33 @@
-![alt text](image-5.png)
+![Gogushop Music Preview](image-5.png)
 
 <h1 align="center">🎶 Gogushop Music — Landing Page K-Pop</h1>
 <p align="center">
-  <i>Una experiencia K-Pop creada con <b>Astro</b> — moderna, fluida y llena de estilo.</i>
+  <i>Una experiencia K-Pop moderna y elegante creada con <b>Astro</b> y <b>Tailwind CSS</b></i>
 </p>
 
----
-
 <p align="center">
-  <img src="https://img.shields.io/badge/Framework-Astro-FF6C00?style=for-the-badge&logo=astro&logoColor=white" />
-  <img src="https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-  <img src="https://img.shields.io/badge/Language-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Framework-Astro%205.14-FF6C00?style=for-the-badge&logo=astro&logoColor=white" />
+  <img src="https://img.shields.io/badge/Styling-TailwindCSS%204.1-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Icons-Lucide-000000?style=for-the-badge&logo=lucide&logoColor=white" />
   <img src="https://img.shields.io/badge/Package-pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white" />
-  <img src="https://img.shields.io/badge/Made%20With-%F0%9F%A4%8D%20Love%20%26%20KPop-pink?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Made%20With-💜%20Love%20%26%20KPop-FF69B4?style=for-the-badge" />
 </p>
 
 ---
 
 ## 🌸 Descripción General
 
-**Gogushop Music** es una **Landing Page desarrollada con Astro** enfocada en la venta y exhibición de productos coreanos, en especial **álbumes de K-Pop** 🎧.  
-Diseñada con un estilo **juvenil, elegante y dinámico**, ofrece una navegación suave entre secciones internas (smooth scroll):
+**Gogushop Music** es una landing page moderna desarrollada con **Astro 5** y **Tailwind CSS 4**, especializada en la venta y exhibición de productos K-Pop, especialmente álbumes musicales 🎧.
 
-> 🏠 Inicio • 💿 Álbumes • 💜 Fans • 💬 FAQ • 📞 Contacto • ⚡ Footer
+### ✨ Características Principales
+- 🎨 **Diseño moderno y responsive** con animaciones suaves
+- 🚀 **Navegación fluida** entre secciones (smooth scroll)
+- 💜 **Temática K-Pop** con colores vibrantes y estilo juvenil
+- ⚡ **Optimización de rendimiento** con Astro
+- 📱 **Totalmente responsive** para todos los dispositivos
 
-💡 _Todo el sitio está optimizado para ser una Single-Page moderna, rápida y con diseño responsive._
+### 🗂️ Secciones Disponibles
+> 🏠 **Inicio** • 💿 **Álbumes** • 💜 **Fans** • 💬 **FAQ** • 📞 **Contacto** • ⚡ **Footer**
 
 ---
 
@@ -32,179 +35,304 @@ Diseñada con un estilo **juvenil, elegante y dinámico**, ofrece una navegació
 
 ```plaintext
 📦 app_gogushop/
- ┣ 📂 public/              → Recursos públicos (favicon, imágenes, íconos)
+ ┣ 📂 .astro/              → Archivos de configuración de Astro
+ ┣ 📂 public/              → Recursos estáticos (favicon, íconos)
+ ┃ ┗ 📂 icons/             → Íconos SVG personalizados
  ┣ 📂 src/
- ┃ ┣ 📂 components/        → Navbar, Welcome, Card, FaqItem, etc.
- ┃ ┣ 📂 layouts/           → Layout.astro (estructura global)
- ┃ ┣ 📂 pages/             → index.astro (contenido principal)
- ┃ ┗ 📂 styles/            → global.css (estilos + Tailwind opcional)
- ┣ 📜 package.json
- ┣ 📜 tsconfig.json
- ┗ 📜 astro.config.mjs
-astro.config.mjs
+ ┃ ┣ 📂 assets/            → Recursos del proyecto
+ ┃ ┣ 📂 components/        → Componentes reutilizables (Navbar, Card, etc.)
+ ┃ ┣ 📂 imgs/              → Imágenes del proyecto
+ ┃ ┣ 📂 layouts/           → Layout principal (Layout.astro)
+ ┃ ┣ 📂 pages/             → Páginas del sitio (index.astro)
+ ┃ ┣ 📂 sections/          → Secciones modulares del sitio
+ ┃ ┗ 📂 styles/            → Estilos globales y configuración CSS
+ ┣ 📜 astro.config.mjs     → Configuración de Astro
+ ┣ 📜 tailwind.config.mjs  → Configuración de Tailwind CSS
+ ┣ 📜 package.json         → Dependencias y scripts
+ ┗ 📜 tsconfig.json        → Configuración de TypeScript
 ```
----
-
-## 🚀 **Requisitos Previos**
-
-- ⚙️ **Node.js** `v16+`
-- 📦 **pnpm** (recomendado) — aunque también funciona con `npm` o `yarn`
 
 ---
 
-## 💻 **Instalación (Windows / PowerShell)**
+## 🚀 Requisitos Previos
 
+Antes de comenzar, asegúrate de tener instalado:
+
+- ⚙️ **Node.js** `v18+` (recomendado v20+)
+- 📦 **pnpm** `v8+` (gestor de paquetes recomendado)
+- 🌐 **Navegador web moderno** (Chrome, Firefox, Safari, Edge)
+
+---
+
+## 💻 Instalación y Configuración
+
+### 1️⃣ Clonar y Navegar al Proyecto
 ```bash
+# Navegar al directorio del proyecto
 cd "d:\Voluntariado C-Proyectos\Proyect_Web\app_gogushop"
+
+# Instalar dependencias
 pnpm install
-
-🔥 Modo Desarrollo
 ```
 
-```
+### 2️⃣ Modo Desarrollo
+```bash
+# Iniciar servidor de desarrollo
 pnpm run dev
 ```
 
-Luego abre 👉 http://localhost:4321
+🌐 **Servidor local:** http://localhost:4321
 
-🧭 Navegación interna del Navbar:
+### 3️⃣ Scripts Disponibles
 
-#inicio | #albums | #fans | #faq | #contact | #footer
-🏗️ Build y Previsualización
+| Comando | Descripción |
+|---------|-------------|
+| `pnpm run dev` | Inicia el servidor de desarrollo |
+| `pnpm run build` | Construye la versión de producción |
+| `pnpm run preview` | Previsualiza el build optimizado |
+| `pnpm run astro` | Ejecuta comandos de Astro CLI |
 
-```
-pnpm run build # Construye versión de producción
-pnpm run preview # Previsualiza build optimizada
-```
+### 4️⃣ Navegación Interna
 
-🌈 Integración con Tailwind (opcional pero recomendada)
+El navbar incluye navegación suave a las siguientes secciones:
+- `#inicio` - Página principal
+- `#albums` - Catálogo de álbumes
+- `#fans` - Testimonios de fans
+- `#faq` - Preguntas frecuentes
+- `#contact` - Información de contacto
+- `#footer` - Pie de página
 
-Instalar dependencias:
+---
 
-```
-pnpm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
+## 🎨 Tecnologías y Dependencias
 
-Configurar tailwind.config.js:
+### 📦 Dependencias Principales
 
-```
-content: ["./src/**/*.{astro,html,js,ts,jsx,tsx}"]
-```
-
-En src/styles/global.css añade al inicio:
-
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-Reinicia el servidor:
-
-```
-pnpm run dev
+```json
+{
+  "astro": "^5.14.1",           // Framework principal
+  "tailwindcss": "^4.1.14",    // Framework CSS
+  "@tailwindcss/vite": "^4.1.14", // Integración con Vite
+  "lucide-astro": "^0.545.0",  // Librería de íconos
+  "autoprefixer": "^10.4.21"   // Prefijos CSS automáticos
+}
 ```
 
-✨ Actualizaciones de Diseño y Nuevos Componentes
+### ⚙️ Configuración de Tailwind CSS
 
-### 💿 Sección: Álbumes — Experiencia K-Pop
+El proyecto ya incluye Tailwind CSS 4 configurado. La configuración se encuentra en:
+- `tailwind.config.mjs` - Configuración principal
+- `src/styles/` - Estilos globales y personalizados
 
-- 🔹 Seis beneficios visuales que muestran por qué elegir Gogushop.
+### 🎯 Características de Tailwind Implementadas
+- ✅ **Responsive Design** - Breakpoints móvil-first
+- ✅ **Dark Mode** - Soporte para tema oscuro
+- ✅ **Custom Colors** - Paleta de colores K-Pop
+- ✅ **Animations** - Transiciones y efectos suaves
+- ✅ **Typography** - Tipografías optimizadas
 
-- 🌟 Sub-sección de reseñas rápidas (valoraciones, fans, años de experiencia).
+---
 
-- 💠 Nuevo componente Card.astro con degradados e íconos SVG coloreables.
+## ✨ Componentes y Secciones
 
-### 💜 Sección: Fans — Testimonios Reales
+### 🏗️ Arquitectura de Componentes
 
-- 💬 Cuatro métricas visuales de satisfacción con testimonios auténticos.
-
-- 🌸 Sub-sección final "Join" con llamado a la acción.
-
-- ✨ Animaciones suaves, textos cursivos y decoraciones con quote.svg.
-
-### 💬 Sección: Preguntas Frecuentes (FAQ)
-
-- ❓ Íconos principales para Álbumes, Envíos, Devoluciones y Soporte.
-
-- 🪄 Componente modular FaqItem.astro con props dinámicas:
-
-```
-icon, tag, tagColor, gradient, question, answer
-```
-
-- 💫 Animación nativa con addEventListener y rotación del ícono al abrir/cerrar.
-
-⚙️ Integración General en el Layout
+El proyecto utiliza una arquitectura modular con componentes reutilizables:
 
 ```astro
-import Albums from "../pages/albums.astro";
-import Fans from "../pages/fans.astro";
-import Faq from "../pages/faq.astro";
+// Ejemplo de estructura de componente
+---
+// Props y lógica del componente
+export interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+}
+---
 
-<section id="albums"><Albums /></section>
-<section id="fans"><Fans /></section>
-<section id="faq"><Faq /></section>
-
+<!-- Template del componente -->
+<div class="component-container">
+  <!-- Contenido del componente -->
+</div>
 ```
 
-- 🧠 Evita renderizar el Navbar dos veces (ya viene desde Layout.astro).
+### 📱 Secciones Principales
 
-### 🧠 Tips para Desarrollo
+#### 💿 **Sección Álbumes**
+- 🎯 Catálogo de productos K-Pop
+- 🌟 Sistema de valoraciones y reseñas
+- 💎 Cards con degradados y efectos visuales
+- 🔍 Información detallada de cada álbum
 
-- 🧭 El Navbar implementa navegación interna + cierre automático del menú móvil.
+#### 💜 **Sección Fans**
+- 👥 Testimonios reales de usuarios
+- 📊 Métricas de satisfacción
+- 🎉 Llamadas a la acción (CTA)
+- ✨ Animaciones y efectos interactivos
 
-- 🔍 Puedes añadir un IntersectionObserver para resaltar la sección activa.
+#### 💬 **Sección FAQ**
+- ❓ Preguntas frecuentes organizadas
+- 🎨 Íconos temáticos (Lucide Icons)
+- 🔄 Animaciones de apertura/cierre
+- 📋 Componente modular `FaqItem.astro`
 
-- 🛒 Si deseas integrar un carrito de compras, puedo ayudarte a conectarlo con:
+#### 🗂️ **Navegación**
+- 📱 Navbar responsive con menú hamburguesa
+- 🎯 Smooth scroll entre secciones
+- 🎨 Indicadores visuales de sección activa
+- ⚡ Cierre automático en dispositivos móviles
 
-  - localStorage
+---
 
-  - store de Astro o React
+## 🛠️ Desarrollo y Personalización
 
-  - Backend (API REST / Supabase / Firebase)
+### 🧠 Tips para Desarrolladores
 
-### 🛠️ Contribuir / Personalizar
+- **Navegación Inteligente**: El navbar incluye navegación interna con cierre automático en móviles
+- **Observador de Intersección**: Implementa `IntersectionObserver` para resaltar secciones activas
+- **Componentes Modulares**: Todos los componentes están diseñados para ser reutilizables
+- **Performance**: Optimizado con lazy loading y code splitting de Astro
 
-- 🎨 Agrega o edita álbumes desde src/pages/index.astro o src/components/Albums.astro.
+### 🎨 Personalización
 
-- 💬 Mejora secciones, ajusta props y colores directamente desde los componentes.
+#### Agregar Nuevos Álbumes
+```astro
+// En src/sections/ o src/components/
+const albums = [
+  {
+    title: "Nuevo Álbum",
+    artist: "Artista K-Pop",
+    price: "$25.99",
+    image: "/path/to/image.jpg"
+  }
+];
+```
 
-- 🌍 Si deseas soporte multilenguaje o internacionalización (i18n), puedo ayudarte a configurarlo.
+#### Modificar Colores y Estilos
+```javascript
+// tailwind.config.mjs
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        'kpop-pink': '#FF69B4',
+        'kpop-purple': '#8A2BE2'
+      }
+    }
+  }
+}
+```
 
-### 💖 Tecnologías Usadas
+### 🚀 Funcionalidades Futuras
 
-| Tecnología                                | Uso Principal                |
-| ----------------------------------------- | ---------------------------- |
-| ⚡ **Astro**                              | Framework base del proyecto  |
-| 🎨 **Tailwind CSS**                       | Diseño y estilo responsivo   |
-| 💾 **pnpm**                               | Gestor de dependencias       |
-| 🧱 **HTML / CSS / JS / Astro Components** | Construcción modular         |
-| 🪶 **SVG / Íconos personalizados**        | Estilo y personalidad visual |
+- 🛒 **Carrito de Compras** (localStorage/Astro Store)
+- 🌍 **Internacionalización** (i18n)
+- 🔐 **Autenticación de Usuarios**
+- 💳 **Integración de Pagos**
+- 📊 **Analytics y Métricas**
 
-🌟 Vista Previa (Conceptual)
+---
 
-![alt text](image.png)
+## 💖 Stack Tecnológico
 
-![alt text](image-1.png)
+| Tecnología | Versión | Propósito |
+|------------|---------|-----------|
+| ⚡ **Astro** | 5.14.1 | Framework principal y SSG |
+| 🎨 **Tailwind CSS** | 4.1.14 | Framework CSS y diseño |
+| 🎯 **Lucide Icons** | 0.545.0 | Librería de íconos |
+| 📦 **pnpm** | Latest | Gestor de dependencias |
+| 🔧 **Vite** | Integrado | Bundler y herramientas de desarrollo |
+| 📝 **TypeScript** | Configurado | Tipado estático |
+| 🎭 **Autoprefixer** | 10.4.21 | Compatibilidad CSS |
 
-![alt text](image-2.png)
+### 🌟 Ventajas del Stack Elegido
 
-![alt text](image-3.png)
+- **🚀 Rendimiento**: Astro genera sitios estáticos ultra-rápidos
+- **🎨 Flexibilidad**: Tailwind CSS permite diseños personalizados
+- **📱 Responsive**: Diseño móvil-first automático
+- **🔧 DX**: Excelente experiencia de desarrollo
+- **⚡ SEO**: Optimización automática para motores de búsqueda
 
-## 💫 Autores
+---
 
-👨‍💻 Darwin Joel
-Estudiante de Ingenieria de Sistemas e Informática
+## 🌟 Vista Previa del Proyecto
 
-👨‍💻 Adrian Enrique
-Estudiante de Ingenieria de Sosftware
+### 📱 Capturas de Pantalla
 
-👨‍💻 Oscar Antonio
-Estudiante de Ingenieria de Sistemas e Informática
-“El K-Pop es más que música, es una experiencia — Gogushop la lleva hasta ti.”
+<details>
+<summary>🖼️ Ver todas las capturas</summary>
 
-🧷 Licencia
+#### 🏠 Página Principal
+![Página de Inicio](image-6.png)
 
-Proyecto libre para fines educativos y de práctica — Hecho con 💜 y Astro.
+#### 💿 Sección de Álbumes
+![Catálogo de Álbumes](image-7.png)
+
+#### 💜 Testimonios de Fans
+![Sección de Fans](image-8.png)
+
+#### 💬 Preguntas Frecuentes
+![FAQ Section](image-9.png)
+
+#### 📞 Contacto
+![Sección de Contacto](image-10.png)
+
+#### 📱 Vista Móvil
+![Responsive Design](image-11.png)
+
+</details>
+
+### 🎯 Características Visuales
+
+- ✨ **Animaciones suaves** y transiciones fluidas
+- 🎨 **Gradientes vibrantes** con temática K-Pop
+- 📱 **Diseño responsive** optimizado para todos los dispositivos
+- 🌈 **Paleta de colores** inspirada en la estética K-Pop
+- 🎭 **Íconos modernos** con Lucide Icons
+
+---
+
+## 👥 Equipo de Desarrollo
+
+<table>
+<tr>
+<td align="center">
+<strong>👨💻 Darwin Joel</strong><br>
+<sub>Estudiante de Ingeniería de Sistemas e Informática</sub><br>
+<em>Frontend Developer & UI/UX</em>
+</td>
+<td align="center">
+<strong>👨💻 Adrian Enrique</strong><br>
+<sub>Estudiante de Ingeniería de Software</sub><br>
+<em>Full Stack Developer</em>
+</td>
+<td align="center">
+<strong>👨💻 Oscar Antonio</strong><br>
+<sub>Estudiante de Ingeniería de Sistemas e Informática</sub><br>
+<em>Backend Developer & DevOps</em>
+</td>
+</tr>
+</table>
+
+---
+
+<p align="center">
+<em>"El K-Pop es más que música, es una experiencia — Gogushop la lleva hasta ti."</em>
+</p>
+
+## 📄 Licencia
+
+Este proyecto está bajo la **Licencia MIT** - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+**Proyecto educativo** desarrollado con fines de aprendizaje y práctica profesional.
+
+---
+
+<p align="center">
+<strong>Hecho con 💜, ☕ y mucho K-Pop</strong><br>
+<sub>Powered by Astro & Tailwind CSS</sub>
+</p>
+
+<p align="center">
+<a href="#top">⬆️ Volver al inicio</a>
+</p>
