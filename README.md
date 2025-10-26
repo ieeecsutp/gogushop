@@ -20,6 +20,7 @@
 **Gogushop Music** es una landing page moderna desarrollada con **Astro 5** y **Tailwind CSS 4**, especializada en la venta y exhibición de productos K-Pop, especialmente álbumes musicales 🎧.
 
 ### ✨ Características Principales
+
 - 🎨 **Diseño moderno y responsive** con animaciones suaves
 - 🚀 **Navegación fluida** entre secciones (smooth scroll)
 - 💜 **Temática K-Pop** con colores vibrantes y estilo juvenil
@@ -27,6 +28,7 @@
 - 📱 **Totalmente responsive** para todos los dispositivos
 
 ### 🗂️ Secciones Disponibles
+
 > 🏠 **Inicio** • 💿 **Álbumes** • 💜 **Fans** • 💬 **FAQ** • 📞 **Contacto** • ⚡ **Footer**
 
 ---
@@ -67,6 +69,7 @@ Antes de comenzar, asegúrate de tener instalado:
 ## 💻 Instalación y Configuración
 
 ### 1️⃣ Clonar y Navegar al Proyecto
+
 ```bash
 # Navegar al directorio del proyecto
 cd "d:\Voluntariado C-Proyectos\Proyect_Web\app_gogushop"
@@ -76,6 +79,7 @@ pnpm install
 ```
 
 ### 2️⃣ Modo Desarrollo
+
 ```bash
 # Iniciar servidor de desarrollo
 pnpm run dev
@@ -85,16 +89,17 @@ pnpm run dev
 
 ### 3️⃣ Scripts Disponibles
 
-| Comando | Descripción |
-|---------|-------------|
-| `pnpm run dev` | Inicia el servidor de desarrollo |
-| `pnpm run build` | Construye la versión de producción |
-| `pnpm run preview` | Previsualiza el build optimizado |
-| `pnpm run astro` | Ejecuta comandos de Astro CLI |
+| Comando            | Descripción                        |
+| ------------------ | ---------------------------------- |
+| `pnpm run dev`     | Inicia el servidor de desarrollo   |
+| `pnpm run build`   | Construye la versión de producción |
+| `pnpm run preview` | Previsualiza el build optimizado   |
+| `pnpm run astro`   | Ejecuta comandos de Astro CLI      |
 
 ### 4️⃣ Navegación Interna
 
 El navbar incluye navegación suave a las siguientes secciones:
+
 - `#inicio` - Página principal
 - `#albums` - Catálogo de álbumes
 - `#fans` - Testimonios de fans
@@ -110,21 +115,23 @@ El navbar incluye navegación suave a las siguientes secciones:
 
 ```json
 {
-  "astro": "^5.14.1",           // Framework principal
-  "tailwindcss": "^4.1.14",    // Framework CSS
+  "astro": "^5.14.1", // Framework principal
+  "tailwindcss": "^4.1.14", // Framework CSS
   "@tailwindcss/vite": "^4.1.14", // Integración con Vite
-  "lucide-astro": "^0.545.0",  // Librería de íconos
-  "autoprefixer": "^10.4.21"   // Prefijos CSS automáticos
+  "lucide-astro": "^0.545.0", // Librería de íconos
+  "autoprefixer": "^10.4.21" // Prefijos CSS automáticos
 }
 ```
 
 ### ⚙️ Configuración de Tailwind CSS
 
 El proyecto ya incluye Tailwind CSS 4 configurado. La configuración se encuentra en:
+
 - `tailwind.config.mjs` - Configuración principal
 - `src/styles/` - Estilos globales y personalizados
 
 ### 🎯 Características de Tailwind Implementadas
+
 - ✅ **Responsive Design** - Breakpoints móvil-first
 - ✅ **Dark Mode** - Soporte para tema oscuro
 - ✅ **Custom Colors** - Paleta de colores K-Pop
@@ -159,24 +166,28 @@ export interface Props {
 ### 📱 Secciones Principales
 
 #### 💿 **Sección Álbumes**
+
 - 🎯 Catálogo de productos K-Pop
 - 🌟 Sistema de valoraciones y reseñas
 - 💎 Cards con degradados y efectos visuales
 - 🔍 Información detallada de cada álbum
 
 #### 💜 **Sección Fans**
+
 - 👥 Testimonios reales de usuarios
 - 📊 Métricas de satisfacción
 - 🎉 Llamadas a la acción (CTA)
 - ✨ Animaciones y efectos interactivos
 
 #### 💬 **Sección FAQ**
+
 - ❓ Preguntas frecuentes organizadas
 - 🎨 Íconos temáticos (Lucide Icons)
 - 🔄 Animaciones de apertura/cierre
 - 📋 Componente modular `FaqItem.astro`
 
 #### 🗂️ **Navegación**
+
 - 📱 Navbar responsive con menú hamburguesa
 - 🎯 Smooth scroll entre secciones
 - 🎨 Indicadores visuales de sección activa
@@ -196,6 +207,7 @@ export interface Props {
 ### 🎨 Personalización
 
 #### Agregar Nuevos Álbumes
+
 ```astro
 // En src/sections/ o src/components/
 const albums = [
@@ -209,18 +221,19 @@ const albums = [
 ```
 
 #### Modificar Colores y Estilos
+
 ```javascript
 // tailwind.config.mjs
 module.exports = {
   theme: {
     extend: {
       colors: {
-        'kpop-pink': '#FF69B4',
-        'kpop-purple': '#8A2BE2'
-      }
-    }
-  }
-}
+        "kpop-pink": "#FF69B4",
+        "kpop-purple": "#8A2BE2",
+      },
+    },
+  },
+};
 ```
 
 ### 🚀 Funcionalidades Futuras
@@ -235,15 +248,15 @@ module.exports = {
 
 ## 💖 Stack Tecnológico
 
-| Tecnología | Versión | Propósito |
-|------------|---------|-----------|
-| ⚡ **Astro** | 5.14.1 | Framework principal y SSG |
-| 🎨 **Tailwind CSS** | 4.1.14 | Framework CSS y diseño |
-| 🎯 **Lucide Icons** | 0.545.0 | Librería de íconos |
-| 📦 **pnpm** | Latest | Gestor de dependencias |
-| 🔧 **Vite** | Integrado | Bundler y herramientas de desarrollo |
-| 📝 **TypeScript** | Configurado | Tipado estático |
-| 🎭 **Autoprefixer** | 10.4.21 | Compatibilidad CSS |
+| Tecnología          | Versión     | Propósito                            |
+| ------------------- | ----------- | ------------------------------------ |
+| ⚡ **Astro**        | 5.14.1      | Framework principal y SSG            |
+| 🎨 **Tailwind CSS** | 4.1.14      | Framework CSS y diseño               |
+| 🎯 **Lucide Icons** | 0.545.0     | Librería de íconos                   |
+| 📦 **pnpm**         | Latest      | Gestor de dependencias               |
+| 🔧 **Vite**         | Integrado   | Bundler y herramientas de desarrollo |
+| 📝 **TypeScript**   | Configurado | Tipado estático                      |
+| 🎭 **Autoprefixer** | 10.4.21     | Compatibilidad CSS                   |
 
 ### 🌟 Ventajas del Stack Elegido
 
@@ -263,22 +276,28 @@ module.exports = {
 <summary>🖼️ Ver todas las capturas</summary>
 
 #### 🏠 Página Principal
+
 ![Página de Inicio](image-6.png)
 
 #### 💿 Sección de Álbumes
+
 ![Catálogo de Álbumes](image-7.png)
 
 #### 💜 Testimonios de Fans
+
 ![Sección de Fans](image-8.png)
 
 #### 💬 Preguntas Frecuentes
+
 ![FAQ Section](image-9.png)
 
 #### 📞 Contacto
+
 ![Sección de Contacto](image-10.png)
 
 #### 📱 Vista Móvil
-![Responsive Design](image-11.png)
+
+![alt text](image-12.png)
 
 </details>
 
